@@ -84,6 +84,11 @@
     <symbol id="ic-edu" viewBox="0 0 24 24"><path d="M3 9l9-4 9 4-9 4z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/></symbol>
     <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></symbol>
     <symbol id="ic-upload" viewBox="0 0 24 24"><path d="M12 16V4M8 8l4-4 4 4M5 18v1a2 2 0 002 2h10a2 2 0 002-2v-1"/></symbol>
+    <symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></symbol>
+    <symbol id="ic-sew" viewBox="0 0 24 24"><path d="M5 12h14M9 8l-4 4 4 4M15 8l4 4-4 4"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></symbol>
+    <symbol id="ic-thermo" viewBox="0 0 24 24"><path d="M4 14h16M8 10V5a2 2 0 014 0v5M14 10V7a2 2 0 014 0v3"/><rect x="3" y="14" width="18" height="6" rx="2"/></symbol>
+    <symbol id="ic-blog" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" rx="2"/><path d="M8 8h8M8 12h5M8 16h6"/></symbol>
+    <symbol id="ic-workwear" viewBox="0 0 24 24"><path d="M6 4l-3 3 2 2 1-1v12h12V8l1 1 2-2-3-3-3 2h-6z"/><path d="M10 4v3h4V4"/></symbol>
   </svg>
 
   <!-- ===================== HEADER ===================== -->
@@ -123,6 +128,7 @@
       </nav>
 
       <div style="display:flex; align-items:center; gap:10px; flex:none;" class="dn-desk-actions">
+        <button onClick="{{ openSearch }}" style="width:42px; height:42px; border:1px solid var(--line2); border-radius:11px; background:var(--surface); cursor:pointer; display:flex; align-items:center; justify-content:center; flex:none;" title="Поиск по сайту"><svg viewBox="0 0 24 24" style="width:20px; height:20px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-search"></use></svg></button>
         <a href="tel:+74951814747" style="text-decoration:none; color:var(--ink); font-weight:700; font-size:15px; letter-spacing:-.2px; white-space:nowrap;">+7 (495) 181-47-47</a>
         <button onClick="{{ openCalc }}" class="dn-btn" style="height:46px; padding:0 18px; border:0; border-radius:11px; background:var(--accent); color:#fff; font-weight:600; font-size:14px; cursor:pointer; font-family:inherit; white-space:nowrap;">Рассчитать</button>
         <button onClick="{{ openUpload }}" class="dn-btn" style="height:46px; padding:0 16px; border:1px solid var(--line2); border-radius:11px; background:var(--surface); color:var(--ink); font-weight:600; font-size:14px; cursor:pointer; font-family:inherit; white-space:nowrap;">Отправить макет</button>
@@ -169,6 +175,7 @@
         </div>
         <div style="display:flex; gap:10px; margin-bottom:18px;">
           <button onClick="{{ openCalc }}" class="dn-btn" style="flex:1; height:50px; border:0; border-radius:12px; background:var(--accent); color:#fff; font-weight:600; font-size:15px; font-family:inherit; cursor:pointer;">Рассчитать</button>
+          <button onClick="{{ openSearch }}" style="width:50px; height:50px; border:1px solid var(--line2); border-radius:12px; display:flex; align-items:center; justify-content:center; background:var(--surface); cursor:pointer;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-search"></use></svg></button>
           <a href="tel:+74951814747" style="width:50px; height:50px; border:1px solid var(--line2); border-radius:12px; display:flex; align-items:center; justify-content:center; text-decoration:none; color:var(--ink);"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-{{ icPhone }}"></use></svg></a>
         </div>
         <sc-for list="{{ mobileGroups }}" as="g" hint-placeholder-count="6">
@@ -266,8 +273,8 @@
               </div>
             </sc-if>
 
-            <!-- Variant C: dark industrial band -->
-            <sc-if value="{{ heroC }}" hint-placeholder-val="{{ false }}">
+            <!-- Variant C: dark industrial band + quick entries -->
+            <sc-if value="{{ heroC }}" hint-placeholder-val="{{ true }}">
               <div style="margin:32px 0; border-radius:24px; overflow:hidden; background:var(--accent); color:#fff; position:relative;">
                 <div style="position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 0); background-size:22px 22px;"></div>
                 <div style="position:relative; display:grid; grid-template-columns:1.05fr .95fr; gap:48px; padding:56px 52px; align-items:center;" class="dn-hero-grid">
@@ -280,11 +287,16 @@
                       <button onClick="{{ goCases }}" class="dn-btn" style="height:56px; padding:0 26px; border:1px solid rgba(255,255,255,.3); border-radius:13px; background:transparent; color:#fff; font-weight:600; font-size:16px; cursor:pointer; font-family:inherit;">Смотреть кейсы</button>
                     </div>
                   </div>
-                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-                    <sc-for list="{{ heroChips }}" as="c" hint-placeholder-count="6">
-                      <div style="padding:18px; border-radius:14px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);">
-                        <div style="font-size:15px; font-weight:600; margin-bottom:3px;">{{ c.t }}</div>
-                        <div style="font-size:12.5px; color:#A9BBD0;">{{ c.s }}</div>
+                  <div style="display:flex; flex-direction:column; gap:11px;">
+                    <div style="font-size:12px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:#9FB4CC;">С чего начнём?</div>
+                    <sc-for list="{{ quickEntries }}" as="q" hint-placeholder-count="4">
+                      <div onClick="{{ q.onClick }}" style="display:flex; align-items:center; gap:14px; padding:15px 18px; border-radius:13px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); cursor:pointer; transition:background .12s;" onMouseEnter="this.style.background='rgba(255,255,255,.14)'" onMouseLeave="this.style.background='rgba(255,255,255,.08)'">
+                        <div style="width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,.12); color:#fff; display:flex; align-items:center; justify-content:center; flex:none;"><svg viewBox="0 0 24 24" style="width:20px; height:20px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-{{ q.icon }}"></use></svg></div>
+                        <div style="flex:1; line-height:1.25;">
+                          <div style="font-weight:600; font-size:14.5px;">{{ q.label }}</div>
+                          <div style="font-size:12px; color:#A9BBD0;">{{ q.sub }}</div>
+                        </div>
+                        <span style="color:#A9BBD0; font-size:16px;">→</span>
                       </div>
                     </sc-for>
                   </div>
@@ -323,7 +335,8 @@
                 </sc-if>
                 <div style="width:50px; height:50px; border-radius:13px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; margin-bottom:18px;"><svg viewBox="0 0 24 24" style="width:25px; height:25px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-{{ t.icon }}"></use></svg></div>
                 <div style="font-weight:700; font-size:18px; margin-bottom:7px; letter-spacing:-.3px;">{{ t.name }}</div>
-                <div style="font-size:13.5px; line-height:1.5; color:var(--ink2);">{{ t.desc }}</div>
+                <div style="font-size:13.5px; line-height:1.5; color:var(--ink2); margin-bottom:14px;">{{ t.desc }}</div>
+                <span style="font-size:13px; font-weight:600; color:var(--accent);">Подробнее →</span>
               </div>
             </sc-for>
           </div>
@@ -370,7 +383,7 @@
         <section style="max-width:1240px; margin:0 auto; padding:64px 24px 8px;">
           <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:28px; flex-wrap:wrap;">
             <h2 style="font-size:34px; letter-spacing:-.8px; font-weight:700; margin:0;">Решения для бизнеса</h2>
-            <span onClick="{{ goIndustry }}" class="dn-link" style="font-weight:600; font-size:15px; color:var(--accent); cursor:pointer;">Все отрасли →</span>
+            <span onClick="{{ goIndustriesRoot }}" class="dn-link" style="font-weight:600; font-size:15px; color:var(--accent); cursor:pointer;">Все отрасли →</span>
           </div>
           <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;" class="dn-g4">
             <sc-for list="{{ industries }}" as="i" hint-placeholder-count="8">
@@ -533,6 +546,49 @@
               <div style="padding:20px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
                 <div style="font-weight:600; font-size:15px; margin-bottom:6px; line-height:1.3;">{{ p.a }}</div>
                 <div style="font-size:13px; color:var(--ink2); line-height:1.4;">{{ p.b }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <!-- what they do / details -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">{{ techEx.detailTitle }}</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;" class="dn-g3">
+            <sc-for list="{{ techEx.details }}" as="dd" hint-placeholder-count="6">
+              <div style="padding:20px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
+                <div style="font-weight:600; font-size:15px; margin-bottom:6px;">{{ dd.t }}</div>
+                <div style="font-size:13px; color:var(--ink2); line-height:1.45;">{{ dd.s }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <!-- related products -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 18px;">На чём наносим</h2>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <sc-for list="{{ techEx.products }}" as="tp" hint-placeholder-count="5">
+              <span onClick="{{ goProduct }}" class="dn-hov" style="padding:13px 20px; border:1px solid var(--line); border-radius:12px; font-weight:600; font-size:14px; cursor:pointer; background:var(--surface);">{{ tp }} →</span>
+            </sc-for>
+          </div>
+        </section>
+        <!-- alternative techs -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 8px;">Когда выбрать другой метод</h2>
+          <p style="font-size:15px; color:var(--ink2); margin:0 0 18px; max-width:640px;">{{ techEx.altNote }}</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <sc-for list="{{ techEx.alts }}" as="alt" hint-placeholder-count="3">
+              <span onClick="{{ goTech }}" class="dn-link" style="padding:11px 18px; border:1px solid var(--line2); border-radius:99px; font-weight:600; font-size:14.5px; cursor:pointer; background:var(--surface);">{{ alt }}</span>
+            </sc-for>
+          </div>
+        </section>
+        <!-- cases for this tech -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 20px;">Кейсы: {{ techEx.name }}</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ caseTeaser }}" as="c" hint-placeholder-count="3">
+              <div onClick="{{ goCase }}" class="dn-hov" style="border:1px solid var(--line); border-radius:16px; background:var(--surface); cursor:pointer; overflow:hidden;">
+                <div style="height:130px; background:linear-gradient(135deg,#E3E9F1,#D2DCE8); display:flex; align-items:center; justify-content:center;"><span style="color:#9DB0C6; font-size:13px;">{{ c.ph }}</span></div>
+                <div style="padding:18px;"><span style="font-size:11.5px; font-weight:600; color:var(--accent); background:var(--soft); padding:4px 10px; border-radius:99px;">{{ c.tech }}</span><div style="font-weight:700; font-size:16px; line-height:1.3; margin:10px 0 5px;">{{ c.title }}</div><div style="font-size:13px; color:var(--ink2);">{{ c.result }}</div></div>
               </div>
             </sc-for>
           </div>
@@ -773,6 +829,236 @@
       </div>
     </sc-if>
 
+    <!-- ============ SEWING / ПОШИВ ============ -->
+    <sc-if value="{{ isSewing }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Пошив одежды">
+        <section style="background:var(--accent); color:#fff; padding:48px 0 52px; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 0); background-size:24px 24px;"></div>
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px; position:relative;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:#A9BBD0; margin-bottom:20px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer; color:#A9BBD0;">Главная</span><span>/</span><span style="color:#fff;">Пошив и брендирование одежды</span></div>
+            <h1 style="font-size:46px; letter-spacing:-1.3px; font-weight:700; margin:0 0 16px; max-width:740px;">Пошив и брендирование одежды</h1>
+            <p style="font-size:18px; line-height:1.6; color:#C9D6E6; margin:0 0 28px; max-width:620px;">Полный цикл: разработка лекал, подбор ткани, пошив партии, нанесение логотипа и комплектация. Один подрядчик от образца до отгрузки.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 28px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Обсудить проект</button>
+              <button onClick="{{ openUpload }}" class="dn-btn" style="height:54px; padding:0 26px; border:1px solid rgba(255,255,255,.3); border-radius:13px; background:transparent; color:#fff; font-weight:600; font-size:16px; cursor:pointer; font-family:inherit;">Отправить ТЗ</button>
+            </div>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:52px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Сценарии пошива</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ sewingScenarios }}" as="sw" hint-placeholder-count="3">
+              <div style="padding:26px; border:1px solid var(--line); border-radius:16px; background:var(--surface);">
+                <div style="width:44px; height:44px; border-radius:11px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex:none; margin-bottom:16px;"><svg viewBox="0 0 24 24" style="width:23px; height:23px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-{{ sw.icon }}"></use></svg></div>
+                <div style="font-weight:700; font-size:17px; margin-bottom:7px;">{{ sw.title }}</div>
+                <div style="font-size:14px; color:var(--ink2); line-height:1.5;">{{ sw.sub }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Что шьём</h2>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;" class="dn-g4">
+            <sc-for list="{{ sewingProducts }}" as="sp" hint-placeholder-count="8">
+              <div style="padding:20px; border:1px solid var(--line); border-radius:14px; background:var(--surface); display:flex; align-items:center; gap:12px;">
+                <span style="width:36px; height:36px; border-radius:9px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex:none;"><svg viewBox="0 0 24 24" style="width:19px; height:19px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-shirt"></use></svg></span>
+                <span style="font-weight:600; font-size:15px;">{{ sp }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;" class="dn-g2">
+            <div style="border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--surface);">
+              <h3 style="font-size:20px; font-weight:700; margin:0 0 18px;">Ткани и материалы</h3>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <sc-for list="{{ sewingFabrics }}" as="fb" hint-placeholder-count="5">
+                  <div style="display:flex; align-items:center; gap:12px; font-size:15px;"><span style="width:24px; height:24px; border-radius:7px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex:none; font-size:14px;">✓</span><span>{{ fb }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--surface);">
+              <h3 style="font-size:20px; font-weight:700; margin:0 0 18px;">Размерные ряды</h3>
+              <p style="font-size:15px; line-height:1.6; color:var(--ink2); margin:0 0 14px;">Пошив по стандартным размерным рядам (XS–5XL) или по индивидуальным меркам. Разработаем лекала под ваши требования.</p>
+              <p style="font-size:15px; line-height:1.6; color:var(--ink2); margin:0;">Образец утверждается до запуска тиража. Минимальный тираж — от 50 шт.</p>
+            </div>
+          </div>
+        </section>
+        <section style="background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:48px; padding:52px 0;">
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
+            <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 28px;">Этапы проекта по пошиву</h2>
+            <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:12px;" class="dn-g6">
+              <sc-for list="{{ sewingStages }}" as="st" hint-placeholder-count="6">
+                <div style="text-align:center;">
+                  <div style="width:44px; height:44px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; margin:0 auto 10px;">{{ st.n }}</div>
+                  <div style="font-size:13px; font-weight:600; line-height:1.3;">{{ st.label }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h3 style="font-size:20px; font-weight:700; margin:0 0 16px;">Технологии брендирования после пошива</h3>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <sc-for list="{{ sewingTechs }}" as="st" hint-placeholder-count="5">
+              <span onClick="{{ goTech }}" class="dn-link" style="padding:11px 18px; border:1px solid var(--line2); border-radius:99px; font-weight:600; font-size:14.5px; cursor:pointer; background:var(--surface);">{{ st }}</span>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 72px;">
+          <div style="border-radius:20px; background:var(--accent); color:#fff; padding:40px 44px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;">
+            <div><h2 style="font-size:28px; letter-spacing:-.6px; font-weight:700; margin:0 0 6px;">Обсудить проект по пошиву</h2><p style="font-size:16px; color:#C9D6E6; margin:0;">Расскажите задачу — подберём ткань, рассчитаем тираж и покажем образец.</p></div>
+            <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 30px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Обсудить проект</button>
+          </div>
+        </section>
+      </div>
+    </sc-if>
+
+    <!-- ============ INDUSTRIES ROOT ============ -->
+    <sc-if value="{{ isIndustriesRoot }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Решения для бизнеса">
+        <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:36px 0 40px;">
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:18px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span>Решения для бизнеса</span></div>
+            <h1 style="font-size:42px; letter-spacing:-1.2px; font-weight:700; margin:0 0 14px; max-width:760px;">Решения для бизнеса</h1>
+            <p style="font-size:18px; color:var(--ink2); line-height:1.55; margin:0 0 24px; max-width:640px;">Готовые комплекты брендирования под вашу отрасль: форма, маркировка, представительские изделия. Подберём технологии, рассчитаем тираж и предложим оптимальный комплект.</p>
+            <button onClick="{{ openCalc }}" class="dn-btn" style="height:52px; padding:0 26px; border:0; border-radius:12px; background:var(--accent); color:#fff; font-weight:600; font-size:15.5px; cursor:pointer; font-family:inherit;">Запросить КП</button>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:40px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Отрасли</h2>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;" class="dn-g4">
+            <sc-for list="{{ industriesFull }}" as="ind" hint-placeholder-count="8">
+              <div onClick="{{ ind.onClick }}" class="dn-hov" style="padding:26px; border:1px solid var(--line); border-radius:16px; background:var(--surface); cursor:pointer;">
+                <div style="width:48px; height:48px; border-radius:12px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg viewBox="0 0 24 24" style="width:24px; height:24px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-{{ ind.icon }}"></use></svg></div>
+                <div style="font-weight:700; font-size:17px; margin-bottom:6px;">{{ ind.name }}</div>
+                <div style="font-size:13px; color:var(--ink2); line-height:1.45;">{{ ind.desc }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Типовой комплект</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;" class="dn-g3">
+            <sc-for list="{{ industryKit }}" as="kit" hint-placeholder-count="6">
+              <div style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface); display:flex; align-items:center; gap:14px;">
+                <span style="width:36px; height:36px; border-radius:9px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex:none; font-weight:700;">✓</span>
+                <span style="font-weight:600; font-size:15px;">{{ kit }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Кейсы</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ caseTeaser }}" as="c" hint-placeholder-count="3">
+              <div onClick="{{ goCase }}" class="dn-hov" style="border:1px solid var(--line); border-radius:16px; background:var(--surface); cursor:pointer; overflow:hidden;">
+                <div style="height:150px; background:linear-gradient(135deg,#E3E9F1,#D2DCE8); display:flex; align-items:center; justify-content:center;"><span style="color:#9DB0C6; font-size:13px;">{{ c.ph }}</span></div>
+                <div style="padding:20px;"><span style="font-size:11.5px; font-weight:600; color:var(--accent); background:var(--soft); padding:4px 10px; border-radius:99px;">{{ c.tech }}</span><div style="font-weight:700; font-size:16px; line-height:1.3; margin:12px 0 6px;">{{ c.title }}</div><div style="font-size:13.5px; color:var(--ink2); line-height:1.45;">{{ c.result }}</div></div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 72px;">
+          <div style="border-radius:20px; background:var(--accent); color:#fff; padding:40px 44px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;">
+            <div><h2 style="font-size:28px; letter-spacing:-.6px; font-weight:700; margin:0 0 6px;">Запросить КП для вашей отрасли</h2><p style="font-size:16px; color:#C9D6E6; margin:0;">Подберём комплект изделий и технологий под ваши задачи.</p></div>
+            <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 30px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Запросить КП</button>
+          </div>
+        </section>
+      </div>
+    </sc-if>
+
+    <!-- ============ PRODUCT CARD (individual item) ============ -->
+    <sc-if value="{{ isProductCard }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Карточка изделия">
+        <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:32px 0 44px;">
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:20px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span onClick="{{ goProducts }}" class="dn-link" style="cursor:pointer;">Что брендируем</span><span style="color:var(--ink3);">/</span><span>{{ productCard.name }}</span></div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;" class="dn-hero-grid">
+              <div>
+                <h1 style="font-size:42px; letter-spacing:-1.2px; font-weight:700; margin:0 0 16px;">{{ productCard.name }}</h1>
+                <p style="font-size:17px; line-height:1.6; color:var(--ink2); margin:0 0 24px;">{{ productCard.desc }}</p>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px;">
+                  <sc-for list="{{ productCard.specs }}" as="sp" hint-placeholder-count="4">
+                    <div style="padding:14px 16px; border:1px solid var(--line); border-radius:12px;">
+                      <div style="font-size:12px; color:var(--ink3); margin-bottom:3px;">{{ sp.label }}</div>
+                      <div style="font-weight:700; font-size:15px;">{{ sp.value }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                  <button onClick="{{ openCalc }}" class="dn-btn" style="height:52px; padding:0 26px; border:0; border-radius:12px; background:var(--accent); color:#fff; font-weight:600; font-size:15px; cursor:pointer; font-family:inherit;">Рассчитать на этой основе</button>
+                  <button onClick="{{ openUpload }}" class="dn-btn" style="height:52px; padding:0 22px; border:1px solid var(--line2); border-radius:12px; background:var(--surface); color:var(--ink); font-weight:600; font-size:15px; cursor:pointer; font-family:inherit;">Отправить макет</button>
+                </div>
+              </div>
+              <div style="border-radius:18px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:340px; display:flex; align-items:center; justify-content:center; color:#8EA2BB; font-size:14px;">фото · {{ productCard.name }}</div>
+            </div>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 20px;">Подходящие технологии нанесения</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;" class="dn-g3">
+            <sc-for list="{{ productCard.techs }}" as="pt" hint-placeholder-count="3">
+              <div onClick="{{ goTech }}" class="dn-hov" style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface); cursor:pointer; display:flex; align-items:center; gap:14px;">
+                <div style="width:42px; height:42px; border-radius:11px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex:none;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-{{ pt.icon }}"></use></svg></div>
+                <div><div style="font-weight:600; font-size:15px;">{{ pt.name }}</div><div style="font-size:12.5px; color:var(--ink2);">{{ pt.note }}</div></div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 20px;">Популярные задачи</h2>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <sc-for list="{{ productCard.subpages }}" as="sub" hint-placeholder-count="4">
+              <span onClick="{{ sub.onClick }}" class="dn-hov" style="padding:13px 20px; border:1px solid var(--line); border-radius:12px; font-weight:600; font-size:14px; cursor:pointer; background:var(--surface);">{{ sub.label }} →</span>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 72px;">
+          <div style="border-radius:20px; background:var(--accent); color:#fff; padding:40px 44px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;">
+            <div><h2 style="font-size:28px; letter-spacing:-.6px; font-weight:700; margin:0 0 6px;">Рассчитать на этой основе</h2><p style="font-size:16px; color:#C9D6E6; margin:0;">Выберите технологию, тираж и срок — пришлём расчёт.</p></div>
+            <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 30px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Рассчитать заказ</button>
+          </div>
+        </section>
+      </div>
+    </sc-if>
+
+    <!-- ============ BLOG ============ -->
+    <sc-if value="{{ isBlog }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Блог / база знаний">
+        <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:36px 0 40px;">
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:18px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span>Блог и база знаний</span></div>
+            <h1 style="font-size:42px; letter-spacing:-1.2px; font-weight:700; margin:0 0 14px;">Блог и база знаний</h1>
+            <p style="font-size:18px; color:var(--ink2); line-height:1.55; margin:0; max-width:620px;">Статьи о технологиях, материалах, подготовке макетов и типовых ошибках. Поможем разобраться и сделать правильный выбор.</p>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:40px 24px 8px;">
+          <div style="display:flex; gap:9px; flex-wrap:wrap; margin-bottom:28px;">
+            <sc-for list="{{ blogFilters }}" as="bf" hint-placeholder-count="5">
+              <button onClick="{{ bf.onClick }}" style="height:40px; padding:0 18px; border:1px solid {{ bf.bd }}; border-radius:99px; background:{{ bf.bg }}; color:{{ bf.fg }}; font-weight:600; font-size:14px; cursor:pointer; font-family:inherit;">{{ bf.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ blogPosts }}" as="bp" hint-placeholder-count="6">
+              <div class="dn-hov" style="border:1px solid var(--line); border-radius:16px; background:var(--surface); cursor:pointer; overflow:hidden;">
+                <div style="height:150px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); display:flex; align-items:center; justify-content:center;"><span style="color:#9DB0C6; font-size:13px;">{{ bp.ph }}</span></div>
+                <div style="padding:20px;">
+                  <div style="display:flex; gap:6px; margin-bottom:10px;">
+                    <span style="font-size:11.5px; font-weight:600; color:var(--accent); background:var(--soft); padding:4px 10px; border-radius:99px;">{{ bp.cat }}</span>
+                    <span style="font-size:11.5px; color:var(--ink3); padding:4px 0;">{{ bp.date }}</span>
+                  </div>
+                  <div style="font-weight:700; font-size:17px; line-height:1.3; margin-bottom:6px; letter-spacing:-.3px;">{{ bp.title }}</div>
+                  <div style="font-size:13.5px; color:var(--ink2); line-height:1.45;">{{ bp.excerpt }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <div style="height:72px;"></div>
+      </div>
+    </sc-if>
+
   </main>
 
   <!-- ===================== FOOTER ===================== -->
@@ -808,6 +1094,28 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===================== SEARCH MODAL ===================== -->
+  <sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:100; display:flex; align-items:flex-start; justify-content:center; padding:80px 20px;">
+      <div onClick="{{ closeSearch }}" style="position:fixed; inset:0; background:rgba(15,22,33,.55); animation:dnScrim .2s ease-out;"></div>
+      <div style="position:relative; width:min(640px,100%); background:var(--surface); border-radius:20px; box-shadow:0 24px 60px rgba(15,22,33,.3); animation:dnUp .24s cubic-bezier(.2,.8,.2,1); overflow:hidden;">
+        <div style="padding:24px 28px; display:flex; align-items:center; gap:14px;">
+          <svg viewBox="0 0 24 24" style="width:22px; height:22px; flex:none; color:var(--ink3);" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-search"></use></svg>
+          <input type="text" placeholder="Поиск по услугам, изделиям, кейсам…" style="flex:1; height:44px; border:0; font-size:17px; font-family:inherit; outline:none; background:transparent;">
+          <button onClick="{{ closeSearch }}" style="width:36px; height:36px; border:1px solid var(--line2); border-radius:9px; background:var(--surface); font-size:14px; cursor:pointer; flex:none;">✕</button>
+        </div>
+        <div style="padding:0 28px 24px;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--ink3); margin-bottom:14px;">Популярные запросы</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <sc-for list="{{ searchSuggestions }}" as="sg" hint-placeholder-count="8">
+              <span onClick="{{ sg.onClick }}" class="dn-link" style="padding:9px 16px; border:1px solid var(--line); border-radius:99px; font-size:13.5px; font-weight:500; cursor:pointer; background:var(--muted);">{{ sg.label }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
 
   <!-- ===================== CALC / FORM MODAL ===================== -->
   <sc-if value="{{ calc.open }}" hint-placeholder-val="{{ false }}">
@@ -949,7 +1257,7 @@ class Component extends DCLogic {
     page: 'home',
     mega: null,
     mobileNav: false,
-    hero: 'A',
+    hero: 'C',
     calcOpen: false,
     calcStep: 1,
     calcMode: 'calc',
@@ -960,8 +1268,12 @@ class Component extends DCLogic {
     techExample: 'embroidery',
     caseFilter: 'Все',
     faqOpen: 0,
+    searchOpen: false,
+    blogFilter: 'Все',
   };
   toggleFaq(i) { this.setState(s => ({ faqOpen: s.faqOpen === i ? -1 : i })); }
+  openSearch() { this.setState({ searchOpen: true, mobileNav: false, mega: null }); }
+  closeSearch() { this.setState({ searchOpen: false }); }
 
   // ---------- icons ----------
   ic(p, sw) { return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="' + (sw||1.7) + '" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>'; }
@@ -991,6 +1303,11 @@ class Component extends DCLogic {
       edu: this.ic('<path d="M3 9l9-4 9 4-9 4z"/><path d="M7 11v5c0 1 2 2 5 2s5-1 5-2v-5"/>'),
       phone: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#14181C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>',
       upload: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1D3B5E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M8 8l4-4 4 4M5 18v1a2 2 0 002 2h10a2 2 0 002-2v-1"/></svg>',
+      search: this.ic('<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>'),
+      sew: this.ic('<path d="M5 12h14M9 8l-4 4 4 4M15 8l4 4-4 4"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/>'),
+      thermo: this.ic('<path d="M4 14h16M8 10V5a2 2 0 014 0v5M14 10V7a2 2 0 014 0v3"/><rect x="3" y="14" width="18" height="6" rx="2"/>'),
+      blog: this.ic('<path d="M4 4h16v16H4z" rx="2"/><path d="M8 8h8M8 12h5M8 16h6"/>'),
+      workwear: this.ic('<path d="M6 4l-3 3 2 2 1-1v12h12V8l1 1 2-2-3-3-3 2h-6z"/><path d="M10 4v3h4V4"/>'),
     };
   }
 
@@ -1022,13 +1339,14 @@ class Component extends DCLogic {
 
   renderVals() {
     const s = this.state;
-    const I = { thread:'thread', silk:'silk', dtf:'dtf', uv:'uv', laser:'laser', cut:'cut', emboss:'emboss', sub:'sub', patch:'patch', shirt:'shirt', cap:'cap', plate:'plate', badge:'badge', logo:'logo', box:'box', cafe:'cafe', sport:'sport', ad:'ad', factory:'factory', retail:'retail', event:'event', edu:'edu', phone:'phone', upload:'upload' };
+    const I = { thread:'thread', silk:'silk', dtf:'dtf', uv:'uv', laser:'laser', cut:'cut', emboss:'emboss', sub:'sub', patch:'patch', shirt:'shirt', cap:'cap', plate:'plate', badge:'badge', logo:'logo', box:'box', cafe:'cafe', sport:'sport', ad:'ad', factory:'factory', retail:'retail', event:'event', edu:'edu', phone:'phone', upload:'upload', search:'search', sew:'sew', thermo:'thermo', blog:'blog', workwear:'workwear' };
     const A = 'var(--accent)', SOFT = 'var(--soft)', LINE = 'var(--line2)', SURF = 'var(--surface)';
 
     const navItems = [
       { label: 'Услуги', hasMenu: true, onEnter: () => this.openMega('services'), onClick: () => this.go('services') },
       { label: 'Что брендируем', hasMenu: true, onEnter: () => this.openMega('brand'), onClick: () => this.go('products') },
-      { label: 'Для бизнеса', hasMenu: true, onEnter: () => this.openMega('industries'), onClick: () => this.go('industry') },
+      { label: 'Пошив', hasMenu: false, onEnter: () => this.closeMega(), onClick: () => this.go('sewing') },
+      { label: 'Для бизнеса', hasMenu: true, onEnter: () => this.openMega('industries'), onClick: () => this.go('industriesRoot') },
       { label: 'Кейсы', hasMenu: false, onEnter: () => this.closeMega(), onClick: () => this.go('cases') },
       { label: 'Производство', hasMenu: false, onEnter: () => this.closeMega(), onClick: () => this.go('complex') },
     ];
@@ -1045,7 +1363,8 @@ class Component extends DCLogic {
           { label: 'Лазерная гравировка', sub: 'Металл, дерево', icon: I.laser },
           { label: 'Лазерная резка', sub: 'Раскрой', icon: I.cut },
           { label: 'Тиснение', sub: 'Фольга, блинт', icon: I.emboss },
-          { label: 'Сублимация / термотрансфер', sub: 'Ткань', icon: I.sub },
+          { label: 'Сублимация', sub: 'Синтетика, спорт', icon: I.sub },
+          { label: 'Термотрансфер', sub: 'Плёнка на ткань', icon: I.thermo },
         ].map(x => ({ ...x, onClick: () => this.go('tech') })),
       },
       brand: {
@@ -1063,8 +1382,8 @@ class Component extends DCLogic {
         ].map(x => ({ ...x, onClick: () => this.go('product') })),
       },
       industries: {
-        title: 'Решения для бизнеса', allLabel: 'Все отрасли', foot: 'Готовые комплекты под отрасль: форма, маркировка, представительские изделия.',
-        onAll: () => this.go('industry'),
+        title: 'Решения для бизнеса', allLabel: 'Все отрасли', foot: 'Готовые комплекты под отрасль: форма, маркировка, представительские изделия. Рассчитаем комплект — запросите КП.',
+        onAll: () => this.go('industriesRoot'),
         items: [
           { label: 'Кафе и рестораны', sub: 'Форма, бейджи', icon: I.cafe },
           { label: 'Спорт', sub: 'Экипировка', icon: I.sport },
@@ -1102,6 +1421,7 @@ class Component extends DCLogic {
       { name: 'Лазерная резка', desc: 'Точный раскрой шильдов, табличек, ложементов.', icon: I.cut, core: false },
       { name: 'Тиснение', desc: 'Фольга и блинт на представительской продукции.', icon: I.emboss, core: false },
       { name: 'Сублимация', desc: 'Полный цвет на синтетике и спортивной экипировке.', icon: I.sub, core: false },
+      { name: 'Термотрансфер', desc: 'Плёночный перенос на ткань. Надписи, номера, мелкие тиражи.', icon: I.thermo, core: false },
     ].map(x => ({ ...x, onClick: () => this.go('tech') }));
 
     const productGroups = [
@@ -1114,7 +1434,7 @@ class Component extends DCLogic {
       { name: 'Кафе и рестораны', icon: I.cafe }, { name: 'Спорт', icon: I.sport },
       { name: 'Рекламные агентства', icon: I.ad }, { name: 'Производство', icon: I.factory },
       { name: 'Ритейл', icon: I.retail }, { name: 'Event', icon: I.event },
-      { name: 'Образование', icon: I.edu }, { name: 'Госзаказ / ЕАИСТ', icon: I.badge },
+      { name: 'Образование', icon: I.edu }, { name: 'Спецодежда', icon: I.workwear },
     ].map(x => ({ ...x, onClick: () => this.go('industry') }));
 
     const processSteps = [
@@ -1142,16 +1462,17 @@ class Component extends DCLogic {
     const mobileGroups = [
       { label: 'Услуги и технологии', sub: '10 методов', onClick: () => this.go('services') },
       { label: 'Что брендируем', sub: 'изделия', onClick: () => this.go('products') },
-      { label: 'Для бизнеса', sub: 'отрасли', onClick: () => this.go('industry') },
+      { label: 'Пошив одежды', sub: 'полный цикл', onClick: () => this.go('sewing') },
+      { label: 'Для бизнеса', sub: 'отрасли', onClick: () => this.go('industriesRoot') },
       { label: 'Комплексный заказ', sub: 'под ключ', onClick: () => this.go('complex') },
       { label: 'Кейсы', sub: '', onClick: () => this.go('cases') },
-      { label: 'Контакты', sub: '', onClick: () => this.go('cases') },
+      { label: 'Блог', sub: 'статьи', onClick: () => this.go('blog') },
     ];
 
     const footCols = [
-      { title: 'Технологии', links: [['Машинная вышивка','tech'],['Шелкография','tech'],['DTF / DTG','tech'],['УФ-печать','tech'],['Лазерная гравировка','tech']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
-      { title: 'Изделия', links: [['Футболки и поло','product'],['Кепки','product'],['Шильды и таблички','product'],['Бейджи и номерки','product'],['Шевроны и нашивки','product']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
-      { title: 'Компания', links: [['О производстве','complex'],['Кейсы','cases'],['Для бизнеса','industry'],['Комплексный заказ','complex'],['Контакты','cases']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
+      { title: 'Технологии', links: [['Машинная вышивка','tech'],['Шелкография','tech'],['DTF / DTG','tech'],['УФ-печать','tech'],['Термотрансфер','tech'],['Лазерная гравировка','tech']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
+      { title: 'Изделия', links: [['Футболки и поло','productCard'],['Кепки','productCard'],['Шильды и таблички','productCard'],['Бейджи и номерки','productCard'],['Шевроны и нашивки','productCard'],['Пошив одежды','sewing']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
+      { title: 'Компания', links: [['О производстве','complex'],['Кейсы','cases'],['Решения для бизнеса','industriesRoot'],['Комплексный заказ','complex'],['Блог и статьи','blog'],['Требования к макетам','blog'],['Доставка и оплата','complex'],['Контакты','cases']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
     ];
 
     // ----- calc modal data -----
@@ -1188,6 +1509,18 @@ class Component extends DCLogic {
         suits: ['Корпоративная и промо-одежда', 'Спецодежда и униформа', 'Шевроны, нашивки, кепки', 'Пледы, полотенца, халаты'],
         limits: 'Не подходит для мелкого текста и фотоизображений. На тонких тканях крупная вышивка может стягивать материал — для таких задач предложим шелкографию или DTF.',
         price: [['Изделие и материал', 'тип ткани, плотность'], ['Размер и плотность вышивки', 'число стежков'], ['Цветность', 'количество цветов нити'], ['Тираж', 'дигитайзинг делится на партию'], ['Срок', 'срочность и загрузка']].map(([a, b]) => ({ a, b })),
+        detailTitle: 'Что вышивают и какими нитями',
+        details: [
+          { t: 'Логотипы', s: 'Корпоративные знаки, эмблемы, монограммы до 15 цветов нити.' },
+          { t: 'Шевроны и нашивки', s: 'На заготовке или прямо на изделии, с оверлоком и термоклеем.' },
+          { t: 'Надписи и номера', s: 'Именная персонализация, нумерация для спецодежды.' },
+          { t: 'Полиэстеровая нить', s: 'Основной тип. Стойкая к стирке, УФ, истиранию. 500+ цветов Madeira/Gunold.' },
+          { t: 'Металлизированная нить', s: 'Для премиальных эффектов: золото, серебро, бронза.' },
+          { t: 'Вискозная нить', s: 'Блестящая, мягкая. Для полотенец, халатов и декоративных изделий.' },
+        ],
+        products: ['Футболки и поло', 'Толстовки и худи', 'Кепки и бейсболки', 'Спецодежда', 'Халаты и полотенца'],
+        altNote: 'Если нужен полноцвет или фотоизображение — подойдёт DTF/DTG. Для крупных тиражей с простым рисунком — шелкография дешевле.',
+        alts: ['Шелкография', 'DTF / DTG', 'Термотрансфер'],
       },
       silk: {
         name: 'Шелкография', badge: 'Коммерческое ядро', iconId: 'silk',
@@ -1195,6 +1528,18 @@ class Component extends DCLogic {
         suits: ['Промо-футболки и мерч', 'Толстовки и худи', 'Сумки, шопперы', 'Спецодежда крупными тиражами'],
         limits: 'Невыгодна на малых тиражах из-за подготовки трафаретов. Ограничена по числу цветов и не передаёт фотоградиенты — для полноцвета используем DTF/DTG.',
         price: [['Изделие и материал', 'тип и цвет ткани'], ['Размер нанесения', 'площадь печати'], ['Цветность', 'число цветов = число трафаретов'], ['Тираж', 'ключевой фактор цены'], ['Срок', 'стандарт или срочно']].map(([a, b]) => ({ a, b })),
+        detailTitle: 'Что печатают и какими красками',
+        details: [
+          { t: 'Логотипы и графика', s: 'Плашечные цвета, текст, геометрия — до 6 цветов в одном нанесении.' },
+          { t: 'Полноформатные принты', s: 'Крупные изображения на груди, спине, рукаве.' },
+          { t: 'Спецэффекты', s: 'Светоотражающая, объёмная (puff), глиттерная и фосфоресцентная печать.' },
+          { t: 'Пластизолевые краски', s: 'Основной тип. Яркие, укрывистые, стойкие к стиркам.' },
+          { t: 'Водные краски', s: 'Мягкие на ощупь, для светлых тканей и экологичных заказов.' },
+          { t: 'Discharge-печать', s: 'Вытравка красителя ткани и замена на свой цвет. Мягкость + яркость.' },
+        ],
+        products: ['Футболки и поло', 'Толстовки и худи', 'Сумки и шопперы', 'Спецодежда', 'Промо-текстиль'],
+        altNote: 'Для малых тиражей (до 30 шт) шелкография невыгодна — используйте DTF. Для премиального вида и объёма — вышивку.',
+        alts: ['DTF / DTG', 'Машинная вышивка', 'Термотрансфер'],
       },
     };
     const techEx = techExamples[s.techExample] || techExamples.embroidery;
@@ -1266,6 +1611,72 @@ class Component extends DCLogic {
     const casesShown = (s.caseFilter === 'Все' ? allCases : allCases.filter(c => c.tech === s.caseFilter)).map(c => ({ ...c, onClick: () => this.go('case') }));
     const caseDetail = allCases[0];
 
+    // ===== SEARCH =====
+    const searchSuggestions = [
+      'Машинная вышивка', 'Шелкография', 'DTF-печать', 'Футболки с логотипом',
+      'Шильды', 'Бейджи с логотипом', 'Кепки с вышивкой', 'Пошив одежды',
+    ].map(label => ({ label, onClick: () => { this.closeSearch(); this.go('tech'); } }));
+
+    // ===== SEWING =====
+    const sewingScenarios = [
+      { title: 'Корпоративная форма', sub: 'Поло, рубашки, жилеты с логотипом для офиса, ритейла, HoReCa. Единый стандарт по всем точкам.', icon: I.shirt },
+      { title: 'Спецодежда и униформа', sub: 'Куртки, комбинезоны, халаты из смесовых тканей. Усиленные швы, СИЗ-нормы, светоотражение.', icon: I.workwear },
+      { title: 'Промо и мерч', sub: 'Футболки, худи, шопперы для мероприятий, подарков и внутренних задач. Малые и средние тиражи.', icon: I.box },
+    ];
+    const sewingProducts = ['Футболки', 'Поло', 'Толстовки и худи', 'Рубашки', 'Жилеты', 'Куртки', 'Комбинезоны', 'Фартуки'];
+    const sewingFabrics = ['Хлопок 150–220 г/м²', 'Пике (для поло)', 'Футер 280–340 г (толстовки)', 'Смесовые ткани (спецодежда)', 'Оксфорд, рип-стоп (куртки)'];
+    const sewingStages = ['ТЗ и бриф', 'Лекала', 'Образец', 'Утверждение', 'Пошив тиража', 'Брендирование'].map((label, i) => ({ n: i + 1, label }));
+    const sewingTechs = ['Машинная вышивка', 'Шелкография', 'DTF / DTG', 'Термотрансфер', 'Сублимация'];
+
+    // ===== INDUSTRIES ROOT =====
+    const industriesFull = [
+      { name: 'Кафе и рестораны', desc: 'Форма, фартуки, бейджи, навигация, меню-борды.', icon: I.cafe },
+      { name: 'Спорт', desc: 'Экипировка, джерси, шевроны, наградная продукция.', icon: I.sport },
+      { name: 'Рекламные агентства', desc: 'Под клиента: промо-мерч, корпоративные подарки, одежда.', icon: I.ad },
+      { name: 'Производство', desc: 'Спецодежда, маркировка оборудования, шильды, таблички.', icon: I.factory },
+      { name: 'Ритейл', desc: 'Униформа, бейджи, навигация, промо-текстиль.', icon: I.retail },
+      { name: 'Event', desc: 'Мерч, футболки, бейджи, промо-подарки для мероприятий.', icon: I.event },
+      { name: 'Образование', desc: 'Школьная форма, дипломы, нашивки, бейджи.', icon: I.edu },
+      { name: 'Спецодежда', desc: 'СИЗ, светоотражение, нашивки, маркировка, нормы.', icon: I.workwear },
+    ].map(x => ({ ...x, onClick: () => this.go('industry') }));
+    const industryKit = ['Корпоративная форма с логотипом', 'Бейджи и именные таблички', 'Шевроны и нашивки', 'Спецодежда с маркировкой', 'Промо и мерч', 'Представительские изделия'];
+
+    // ===== PRODUCT CARD =====
+    const productCard = {
+      name: 'Футболки',
+      desc: 'Хлопковые и смесовые футболки для нанесения логотипа. Своя основа или подбор из каталога. Вышивка, шелкография, DTF, термотрансфер — подберём метод под тираж и бюджет.',
+      specs: [
+        { label: 'Материал', value: 'Хлопок 150–190 г/м²' },
+        { label: 'Размеры', value: 'XS – 5XL' },
+        { label: 'Цвета', value: '12+ базовых цветов' },
+        { label: 'Мин. тираж', value: 'от 1 шт' },
+      ],
+      techs: [
+        { name: 'Машинная вышивка', note: 'Премиальный логотип на груди / рукаве', icon: I.thread },
+        { name: 'Шелкография', note: 'Тиражная печать от 30 шт', icon: I.silk },
+        { name: 'DTF / DTG', note: 'Полноцвет на малых тиражах', icon: I.dtf },
+      ],
+      subpages: [
+        { label: 'Футболка с вышивкой', onClick: () => this.go('tech') },
+        { label: 'Футболка с логотипом', onClick: () => this.go('tech') },
+        { label: 'Футболка с печатью', onClick: () => this.go('tech') },
+        { label: 'Футболка с надписью', onClick: () => this.go('tech') },
+      ],
+    };
+
+    // ===== BLOG =====
+    const blogCats = ['Все', 'Технологии', 'Материалы', 'Макеты', 'Кейсы'];
+    const blogFilters = blogCats.map(c => ({ label: c, onClick: () => this.setState({ blogFilter: c }), bg: s.blogFilter === c ? A : 'var(--surface)', fg: s.blogFilter === c ? '#fff' : 'var(--ink)', bd: s.blogFilter === c ? A : LINE }));
+    const allBlogPosts = [
+      { cat: 'Технологии', title: 'Вышивка vs шелкография: что выбрать для корпоративной формы', excerpt: 'Сравниваем два главных метода по стоимости, стойкости, внешнему виду и тиражу.', date: '20 июня 2026', ph: 'иллюстрация' },
+      { cat: 'Макеты', title: 'Как подготовить макет для вышивки: требования и частые ошибки', excerpt: 'Формат файла, минимальный размер элементов, цвета нитей и дигитайзинг.', date: '15 июня 2026', ph: 'иллюстрация' },
+      { cat: 'Материалы', title: 'Какую ткань выбрать для корпоративных футболок', excerpt: 'Хлопок, пике, смесовые ткани — плюсы и минусы для разных задач.', date: '10 июня 2026', ph: 'иллюстрация' },
+      { cat: 'Технологии', title: 'DTF-печать: когда это лучший выбор', excerpt: 'Полноцветная печать без трафаретов — для малых тиражей и сложных изображений.', date: '5 июня 2026', ph: 'иллюстрация' },
+      { cat: 'Кейсы', title: '5 000 промо-футболок за 9 дней: кейс фестиваля', excerpt: 'Как организовали шелкографию в 3 цвета с поэтапной отгрузкой.', date: '1 июня 2026', ph: 'иллюстрация' },
+      { cat: 'Материалы', title: 'Шильды: алюминий, нержавейка или пластик?', excerpt: 'Сравнение материалов по стойкости, внешнему виду и стоимости для маркировочных табличек.', date: '28 мая 2026', ph: 'иллюстрация' },
+    ];
+    const blogPosts = s.blogFilter === 'Все' ? allBlogPosts : allBlogPosts.filter(p => p.cat === s.blogFilter);
+
     const crumb = (label) => [{ label: 'Главная', onClick: () => this.go('home') }, { label }];
 
     return {
@@ -1275,7 +1686,7 @@ class Component extends DCLogic {
       toggleMobileNav: () => this.toggleMobileNav(), mobileNav: s.mobileNav, mobileGroups,
       openCalc: () => this.openCalc(), openUpload: () => this.openUpload(),
       goServicesRoot: () => this.go('services'), goProductsRoot: () => this.go('products'),
-      goIndustry: () => this.go('industry'), goComplex: () => this.go('complex'),
+      goIndustry: () => this.go('industry'), goIndustriesRoot: () => this.go('industriesRoot'), goComplex: () => this.go('complex'),
       goCases: () => this.go('cases'), goCase: () => this.go('case'),
       icPhone: I.phone, icUpload: I.upload,
       footCols,
@@ -1306,10 +1717,15 @@ class Component extends DCLogic {
       setPhone: (e) => this.setField('phone', e.target.value),
       setComment: (e) => this.setField('comment', e.target.value),
       phoneError: s.phoneError, phoneBorder: s.phoneError ? '#D33030' : LINE,
+      // search
+      searchOpen: s.searchOpen, openSearch: () => this.openSearch(), closeSearch: () => this.closeSearch(),
+      searchSuggestions,
       // page flags
       isTech: s.page === 'tech', isProduct: s.page === 'product', isIndustry: s.page === 'industry',
       isComplex: s.page === 'complex', isCases: s.page === 'cases', isCase: s.page === 'case',
       isServices: s.page === 'services', isProducts: s.page === 'products',
+      isSewing: s.page === 'sewing', isIndustriesRoot: s.page === 'industriesRoot',
+      isProductCard: s.page === 'productCard', isBlog: s.page === 'blog',
       // tech
       techEx, techSwitch, faqItems,
       goCalcTech: () => this.openCalc(),
@@ -1321,10 +1737,19 @@ class Component extends DCLogic {
       complexScenarios, complexStages, complexNeeds,
       // cases
       caseFilters, casesShown, caseDetail, casesCount: casesShown.length,
+      // sewing
+      sewingScenarios, sewingProducts, sewingFabrics, sewingStages, sewingTechs,
+      // industries root
+      industriesFull, industryKit,
+      // product card
+      productCard,
+      // blog
+      blogFilters, blogPosts,
       // shared
       crumbHome: () => this.go('home'),
       goServices: () => this.go('services'), goProducts: () => this.go('products'),
       goTech: () => this.go('tech'), goProduct: () => this.go('product'),
+      goSewing: () => this.go('sewing'), goBlog: () => this.go('blog'),
     };
   }
 }
