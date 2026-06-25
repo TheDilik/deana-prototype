@@ -106,8 +106,8 @@
         </div>
       </div>
     </div>
-    <!-- main bar -->
-    <div style="max-width:1240px; margin:0 auto; padding:0 24px; height:76px; display:flex; align-items:center; gap:28px;">
+    <!-- row 1: logo + search + phone + CTA -->
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; height:68px; display:flex; align-items:center; gap:20px;">
       <div onClick="{{ goHome }}" style="display:flex; align-items:center; gap:12px; cursor:pointer; flex:none;">
         <div style="width:42px; height:42px; border-radius:11px; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:20px; letter-spacing:.5px;">Д</div>
         <div style="line-height:1.1;">
@@ -116,9 +116,26 @@
         </div>
       </div>
 
-      <nav style="display:flex; align-items:center; gap:2px; flex:1; min-width:0; justify-content:flex-end;" class="dn-des-nav">
-        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="5">
-          <div onClick="{{ item.onClick }}" onMouseEnter="{{ item.onEnter }}" class="dn-link" style="display:flex; align-items:center; gap:5px; padding:9px 11px; border-radius:9px; font-size:14.5px; font-weight:500; color:var(--ink); cursor:pointer; white-space:nowrap;">
+      <div onClick="{{ openSearch }}" class="dn-des-nav" style="flex:1; min-width:0; height:42px; border:1px solid var(--line2); border-radius:11px; background:var(--muted); display:flex; align-items:center; gap:10px; padding:0 14px; cursor:pointer;">
+        <svg viewBox="0 0 24 24" style="width:18px; height:18px; flex:none; color:var(--ink3);" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-search"></use></svg>
+        <span style="font-size:14px; color:var(--ink3);">Поиск по услугам, изделиям, кейсам…</span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:10px; flex:none;" class="dn-desk-actions">
+        <a href="tel:+74951814747" style="text-decoration:none; color:var(--ink); font-weight:700; font-size:15px; letter-spacing:-.2px; white-space:nowrap;">+7 (495) 181-47-47</a>
+        <button onClick="{{ openCalc }}" class="dn-btn" style="height:42px; padding:0 18px; border:0; border-radius:11px; background:var(--accent); color:#fff; font-weight:600; font-size:14px; cursor:pointer; font-family:inherit; white-space:nowrap;">Рассчитать</button>
+        <button onClick="{{ openUpload }}" class="dn-btn" style="height:42px; padding:0 16px; border:1px solid var(--line2); border-radius:11px; background:var(--surface); color:var(--ink); font-weight:600; font-size:14px; cursor:pointer; font-family:inherit; white-space:nowrap;">Отправить макет</button>
+      </div>
+
+      <button onClick="{{ toggleMobileNav }}" class="dn-mob-burger" style="display:none; width:46px; height:46px; border:1px solid var(--line2); border-radius:11px; background:var(--surface); cursor:pointer; align-items:center; justify-content:center; flex:none;">
+        <div style="width:20px; height:2px; background:var(--ink); box-shadow:0 -6px 0 var(--ink), 0 6px 0 var(--ink);"></div>
+      </button>
+    </div>
+    <!-- row 2: nav menu -->
+    <div style="border-top:1px solid var(--line);" class="dn-des-nav">
+      <nav style="max-width:1240px; margin:0 auto; padding:0 24px; height:44px; display:flex; align-items:center; gap:2px;">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+          <div onClick="{{ item.onClick }}" onMouseEnter="{{ item.onEnter }}" class="dn-link" style="display:flex; align-items:center; gap:5px; padding:8px 14px; border-radius:9px; font-size:14.5px; font-weight:500; color:var(--ink); cursor:pointer; white-space:nowrap;">
             <span>{{ item.label }}</span>
             <sc-if value="{{ item.hasMenu }}" hint-placeholder-val="{{ true }}">
               <span style="font-size:9px; color:var(--ink3); margin-top:1px;">▼</span>
@@ -126,17 +143,6 @@
           </div>
         </sc-for>
       </nav>
-
-      <div style="display:flex; align-items:center; gap:10px; flex:none;" class="dn-desk-actions">
-        <button onClick="{{ openSearch }}" style="width:42px; height:42px; border:1px solid var(--line2); border-radius:11px; background:var(--surface); cursor:pointer; display:flex; align-items:center; justify-content:center; flex:none;" title="Поиск по сайту"><svg viewBox="0 0 24 24" style="width:20px; height:20px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-search"></use></svg></button>
-        <a href="tel:+74951814747" style="text-decoration:none; color:var(--ink); font-weight:700; font-size:15px; letter-spacing:-.2px; white-space:nowrap;">+7 (495) 181-47-47</a>
-        <button onClick="{{ openCalc }}" class="dn-btn" style="height:46px; padding:0 18px; border:0; border-radius:11px; background:var(--accent); color:#fff; font-weight:600; font-size:14px; cursor:pointer; font-family:inherit; white-space:nowrap;">Рассчитать</button>
-        <button onClick="{{ openUpload }}" class="dn-btn" style="height:46px; padding:0 16px; border:1px solid var(--line2); border-radius:11px; background:var(--surface); color:var(--ink); font-weight:600; font-size:14px; cursor:pointer; font-family:inherit; white-space:nowrap;">Отправить макет</button>
-      </div>
-
-      <button onClick="{{ toggleMobileNav }}" class="dn-mob-burger" style="display:none; width:46px; height:46px; border:1px solid var(--line2); border-radius:11px; background:var(--surface); cursor:pointer; align-items:center; justify-content:center; flex:none;">
-        <div style="width:20px; height:2px; background:var(--ink); box-shadow:0 -6px 0 var(--ink), 0 6px 0 var(--ink);"></div>
-      </button>
     </div>
 
     <!-- mega menu -->
