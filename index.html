@@ -312,6 +312,12 @@
           </div>
         </section>
 
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">РПК «Диана» — производственная компания полного цикла. С 2001 года мы занимаемся брендированием одежды, технических изделий и представительской продукции для бизнеса. Собственное производство в Москве, более 10 технологий нанесения, работа с тиражами от 1 штуки. Мы не посредники — всё делаем на своём оборудовании, контролируем качество на каждом этапе и отгружаем готовый заказ точно в срок. Среди наших клиентов — крупные корпорации, государственные структуры, спортивные организации и рекламные агентства.</p>
+          </div>
+        </section>
+
         <!-- TRUST LOGOS -->
         <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:26px 0;">
           <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; justify-content:space-between;">
@@ -321,6 +327,12 @@
                 <span style="font-size:18px; font-weight:700; letter-spacing:-.3px; color:var(--ink3);">{{ c }}</span>
               </sc-for>
             </div>
+          </div>
+        </section>
+
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">Выбор технологии нанесения зависит от материала основы, тиража, цветности и требований к стойкости. Вышивка даёт премиальный объёмный результат на одежде, шелкография — самый выгодный способ для средних и крупных тиражей по ткани, DTF подходит для полноцвета на малых партиях, а УФ-печать незаменима на жёстких основах. Мы поможем подобрать оптимальный метод и рассчитаем стоимость с учётом всех параметров заказа.</p>
           </div>
         </section>
 
@@ -345,6 +357,12 @@
                 <span style="font-size:13px; font-weight:600; color:var(--accent);">Подробнее →</span>
               </div>
             </sc-for>
+          </div>
+        </section>
+
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">Основа для нанесения — это не менее важный выбор, чем технология. Мы работаем с тремя категориями: одежда (футболки, поло, толстовки, спецодежда, кепки), технические изделия (шильды, таблички, бейджи, номерки) и текстильно-представительская продукция (шевроны, нашивки, дипломы). Вы можете предоставить свои изделия, выбрать из нашего каталога или заказать пошив — мы подберём оптимальный вариант под задачу и бюджет.</p>
           </div>
         </section>
 
@@ -382,6 +400,20 @@
                 </div>
               </sc-for>
             </div>
+          </div>
+        </section>
+
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">Качество — основа нашей репутации. Каждый заказ проходит контроль на всех этапах: от проверки макета и согласования образца до финальной приёмки партии. Мы используем профессиональное оборудование Tajima, Mimaki, Roland и работаем с сертифицированными материалами. Результат подтверждён тысячами выполненных заказов и долгосрочными контрактами с крупнейшими компаниями России.</p>
+          </div>
+        </section>
+
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 0;">
+          <div style="border-radius:20px; background:linear-gradient(135deg,#E3E9F1,#CDD9E8); height:400px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; position:relative; overflow:hidden;">
+            <div style="width:72px; height:72px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:28px; cursor:pointer;">▶</div>
+            <div style="font-weight:700; font-size:20px; color:var(--accent);">Видеопрезентация производства</div>
+            <div style="font-size:14px; color:var(--ink2);">Посмотрите, как устроено наше производство — 2 минуты</div>
           </div>
         </section>
 
@@ -447,15 +479,24 @@
     <!-- ============ SERVICES ROOT ============ -->
     <sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}">
       <div data-screen-label="Услуги / технологии">
-        <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:36px 0 40px;">
-          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
-            <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:18px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span>Услуги и технологии</span></div>
-            <h1 style="font-size:42px; letter-spacing:-1.2px; font-weight:700; margin:0 0 14px; max-width:760px;">Методы нанесения и помощь в выборе</h1>
-            <p style="font-size:18px; color:var(--ink2); line-height:1.55; margin:0 0 24px; max-width:620px;">10 технологий на собственном производстве. Не знаете, что подойдёт под изделие и тираж — подберём за вас.</p>
-            <button onClick="{{ openCalc }}" class="dn-btn" style="height:52px; padding:0 26px; border:0; border-radius:12px; background:var(--accent); color:#fff; font-weight:600; font-size:15.5px; cursor:pointer; font-family:inherit;">Подобрать технологию</button>
+        <section style="background:var(--accent); color:#fff; padding:48px 0 52px; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 0); background-size:24px 24px;"></div>
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px; position:relative;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:#A9BBD0; margin-bottom:20px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer; color:#A9BBD0;">Главная</span><span>/</span><span style="color:#fff;">Услуги и технологии</span></div>
+            <h1 style="font-size:46px; letter-spacing:-1.3px; font-weight:700; margin:0 0 16px; max-width:760px;">Методы нанесения и помощь в выборе</h1>
+            <p style="font-size:18px; line-height:1.6; color:#C9D6E6; margin:0 0 28px; max-width:620px;">10 технологий на собственном производстве. Не знаете, что подойдёт под изделие и тираж — подберём за вас.</p>
+            <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 28px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Подобрать технологию</button>
           </div>
         </section>
+
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">Каждая технология нанесения решает свои задачи. Выбор зависит от материала основы, тиража, цветности макета и требований к стойкости. Ниже — сравнительная таблица, которая поможет сориентироваться. Если остаются вопросы — менеджер подберёт оптимальный метод бесплатно.</p>
+          </div>
+        </section>
+
         <section style="max-width:1240px; margin:0 auto; padding:40px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Все технологии</h2>
           <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;" class="dn-g4">
             <sc-for list="{{ techCards }}" as="t" hint-placeholder-count="8">
               <div onClick="{{ t.onClick }}" class="dn-hov" style="padding:24px; border:1px solid var(--line); border-radius:16px; background:var(--surface); cursor:pointer; position:relative;">
@@ -467,28 +508,202 @@
             </sc-for>
           </div>
         </section>
-        <div style="height:64px;"></div>
+
+        <!-- Comparison table -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Сравнение технологий</h2>
+          <div style="overflow-x:auto; border:1px solid var(--line); border-radius:16px; background:var(--surface);" class="dn-scroll">
+            <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:700px;">
+              <thead>
+                <tr style="background:var(--muted); text-align:left;">
+                  <th style="padding:14px 16px; font-weight:700; border-bottom:1px solid var(--line);">Технология</th>
+                  <th style="padding:14px 16px; font-weight:700; border-bottom:1px solid var(--line);">Основа</th>
+                  <th style="padding:14px 16px; font-weight:700; border-bottom:1px solid var(--line);">Тираж</th>
+                  <th style="padding:14px 16px; font-weight:700; border-bottom:1px solid var(--line);">Цветность</th>
+                  <th style="padding:14px 16px; font-weight:700; border-bottom:1px solid var(--line);">Стойкость</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ comparisonRows }}" as="row" hint-placeholder-count="8">
+                  <tr style="border-bottom:1px solid var(--line);">
+                    <td style="padding:12px 16px; font-weight:600;">{{ row.tech }}</td>
+                    <td style="padding:12px 16px; color:var(--ink2);">{{ row.base }}</td>
+                    <td style="padding:12px 16px; color:var(--ink2);">{{ row.qty }}</td>
+                    <td style="padding:12px 16px; color:var(--ink2);">{{ row.colors }}</td>
+                    <td style="padding:12px 16px; color:var(--ink2);">{{ row.durability }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- What to choose scenarios -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Что выбрать, если…</h2>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;" class="dn-g4">
+            <sc-for list="{{ serviceScenarios }}" as="sc" hint-placeholder-count="4">
+              <div style="padding:24px; border:1px solid var(--line); border-radius:16px; background:var(--surface);">
+                <div style="font-weight:700; font-size:17px; margin-bottom:8px; color:var(--accent);">{{ sc.q }}</div>
+                <div style="font-size:14px; color:var(--ink2); line-height:1.5;">{{ sc.a }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <!-- Technology-to-substrate connections -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 8px;">Технология → Основа</h2>
+          <p style="font-size:16px; color:var(--ink2); margin:0 0 24px;">Какие изделия подходят под каждый метод нанесения.</p>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;" class="dn-g3">
+            <sc-for list="{{ techSubstrate }}" as="ts" hint-placeholder-count="6">
+              <div onClick="{{ ts.onClick }}" class="dn-hov" style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface); cursor:pointer;">
+                <div style="font-weight:700; font-size:16px; margin-bottom:6px;">{{ ts.tech }}</div>
+                <div style="font-size:13px; color:var(--ink2); line-height:1.5;">{{ ts.items }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <!-- Reviews placeholder -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Отзывы клиентов</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ serviceReviews }}" as="rev" hint-placeholder-count="3">
+              <div style="padding:24px; border:1px solid var(--line); border-radius:16px; background:var(--surface);">
+                <div style="font-size:14px; color:var(--ink2); line-height:1.6; margin-bottom:16px; font-style:italic;">«{{ rev.text }}»</div>
+                <div style="font-weight:600; font-size:14px;">{{ rev.name }}</div>
+                <div style="font-size:13px; color:var(--ink3);">{{ rev.role }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <!-- Cases by method -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Кейсы по методам</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ caseTeaser }}" as="c" hint-placeholder-count="3">
+              <div onClick="{{ goCase }}" class="dn-hov" style="border:1px solid var(--line); border-radius:16px; background:var(--surface); cursor:pointer; overflow:hidden;">
+                <div style="height:130px; background:linear-gradient(135deg,#E3E9F1,#D2DCE8); display:flex; align-items:center; justify-content:center;"><span style="color:#9DB0C6; font-size:13px;">{{ c.ph }}</span></div>
+                <div style="padding:18px;"><span style="font-size:11.5px; font-weight:600; color:var(--accent); background:var(--soft); padding:4px 10px; border-radius:99px;">{{ c.tech }}</span><div style="font-weight:700; font-size:16px; line-height:1.3; margin:10px 0 5px;">{{ c.title }}</div><div style="font-size:13px; color:var(--ink2);">{{ c.result }}</div></div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section style="max-width:900px; margin:0 auto; padding:56px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Частые вопросы</h2>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <sc-for list="{{ faqItems }}" as="f" hint-placeholder-count="4">
+              <div style="border:1px solid var(--line); border-radius:14px; background:var(--surface); overflow:hidden;">
+                <div onClick="{{ f.onClick }}" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 22px; cursor:pointer;">
+                  <span style="font-weight:600; font-size:16px;">{{ f.q }}</span>
+                  <span style="width:28px; height:28px; border-radius:8px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:18px; flex:none;">{{ f.sign }}</span>
+                </div>
+                <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:0 22px 20px; font-size:15px; line-height:1.6; color:var(--ink2);">{{ f.a }}</div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="max-width:1240px; margin:0 auto; padding:56px 24px 72px;">
+          <div style="border-radius:20px; background:var(--accent); color:#fff; padding:40px 44px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;">
+            <div><h2 style="font-size:28px; letter-spacing:-.6px; font-weight:700; margin:0 0 6px;">Подберём технологию за вас</h2><p style="font-size:16px; color:#C9D6E6; margin:0;">Расскажите задачу — предложим оптимальный метод и пришлём расчёт.</p></div>
+            <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 30px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Рассчитать заказ</button>
+          </div>
+        </section>
       </div>
     </sc-if>
 
     <!-- ============ PRODUCTS ROOT ============ -->
     <sc-if value="{{ isProducts }}" hint-placeholder-val="{{ false }}">
       <div data-screen-label="Что брендируем">
-        <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:36px 0 40px;">
-          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
-            <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:18px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span>Что брендируем</span></div>
-            <h1 style="font-size:42px; letter-spacing:-1.2px; font-weight:700; margin:0 0 14px; max-width:760px;">Изделия, основы и технические носители</h1>
-            <p style="font-size:18px; color:var(--ink2); line-height:1.55; margin:0; max-width:620px;">Своя основа или подбор под заказ. Рассчитаем нанесение на любом изделии — от футболки до шильда.</p>
+        <section style="background:var(--accent); color:#fff; padding:48px 0 52px; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 0); background-size:24px 24px;"></div>
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px; position:relative;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:#A9BBD0; margin-bottom:20px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer; color:#A9BBD0;">Главная</span><span>/</span><span style="color:#fff;">Что брендируем</span></div>
+            <h1 style="font-size:46px; letter-spacing:-1.3px; font-weight:700; margin:0 0 16px; max-width:760px;">B2B-каталог изделий для брендирования</h1>
+            <p style="font-size:18px; line-height:1.6; color:#C9D6E6; margin:0 0 28px; max-width:620px;">Своя основа или подбор под заказ. Рассчитаем нанесение на любом изделии — от футболки до шильда. Используйте фильтры или опишите задачу менеджеру.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 28px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Подобрать изделие</button>
+              <button onClick="{{ openSearch }}" class="dn-btn" style="height:54px; padding:0 24px; border:1px solid rgba(255,255,255,.3); border-radius:12px; background:transparent; color:#fff; font-weight:600; font-size:16px; cursor:pointer; font-family:inherit;">Поиск по каталогу</button>
+            </div>
           </div>
         </section>
-        <section style="max-width:1240px; margin:0 auto; padding:40px 24px 64px;">
+
+        <section style="max-width:1240px; margin:0 auto; padding:40px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Категории</h2>
           <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
             <sc-for list="{{ productGroups }}" as="p" hint-placeholder-count="3">
               <div onClick="{{ p.onClick }}" class="dn-hov" style="border:1px solid var(--line); border-radius:16px; background:var(--surface); cursor:pointer; overflow:hidden;">
                 <div style="height:170px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); display:flex; align-items:center; justify-content:center;"><span style="color:#9DB0C6; font-size:13px;">{{ p.ph }}</span></div>
-                <div style="padding:24px;"><div style="font-weight:700; font-size:20px; margin-bottom:6px; letter-spacing:-.3px;">{{ p.name }}</div><div style="font-size:14px; line-height:1.5; color:var(--ink2);">{{ p.items }}</div></div>
+                <div style="padding:24px;">
+                  <div style="font-weight:700; font-size:20px; margin-bottom:6px; letter-spacing:-.3px;">{{ p.name }}</div>
+                  <div style="font-size:14px; line-height:1.5; color:var(--ink2);">{{ p.items }}</div>
+                  <div style="font-size:13px; font-weight:600; color:var(--accent); margin-top:10px;">{{ p.count }}</div>
+                </div>
               </div>
             </sc-for>
+          </div>
+        </section>
+
+        <!-- Individual product cards -->
+        <section style="max-width:1240px; margin:0 auto; padding:40px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Популярные позиции</h2>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;" class="dn-g4">
+            <sc-for list="{{ productCatalogCards }}" as="pc" hint-placeholder-count="8">
+              <div onClick="{{ pc.onClick }}" class="dn-hov" style="padding:20px; border:1px solid var(--line); border-radius:14px; background:var(--surface); cursor:pointer;">
+                <div style="width:44px; height:44px; border-radius:11px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; margin-bottom:14px;"><svg viewBox="0 0 24 24" style="width:22px; height:22px;" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#ic-{{ pc.icon }}"></use></svg></div>
+                <div style="font-weight:700; font-size:16px; margin-bottom:4px;">{{ pc.name }}</div>
+                <div style="font-size:12.5px; color:var(--ink2); line-height:1.4;">{{ pc.note }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <!-- How we work -->
+        <section style="background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:48px; padding:52px 0;">
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
+            <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 28px;">Как работаем с изделиями</h2>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+              <sc-for list="{{ prodScenarios }}" as="sc" hint-placeholder-count="3">
+                <div style="padding:26px; border:1px solid var(--line); border-radius:16px; background:var(--bg);">
+                  <div style="width:40px; height:40px; border-radius:10px; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; margin-bottom:16px;">{{ sc.n }}</div>
+                  <div style="font-weight:700; font-size:17px; margin-bottom:7px;">{{ sc.title }}</div>
+                  <div style="font-size:14px; color:var(--ink2); line-height:1.5;">{{ sc.sub }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </section>
+
+        <!-- Technology cross-links -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 16px;">Технологии нанесения</h2>
+          <p style="font-size:15px; color:var(--ink2); margin:0 0 18px;">Выбор метода зависит от материала основы — подберём оптимальный.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <sc-for list="{{ indTechs }}" as="t" hint-placeholder-count="5">
+              <span onClick="{{ goTech }}" class="dn-link" style="padding:11px 18px; border:1px solid var(--line2); border-radius:99px; font-weight:600; font-size:14.5px; cursor:pointer; background:var(--surface);">{{ t }}</span>
+            </sc-for>
+          </div>
+        </section>
+
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">Мы работаем с тремя категориями основ: одежда, технические изделия и текстильно-представительская продукция. Для каждой категории доступны свои технологии нанесения. Вы можете предоставить свои изделия, выбрать из нашего каталога или заказать пошив — мы подберём оптимальный вариант под задачу и бюджет.</p>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 72px;">
+          <div style="border-radius:20px; background:var(--accent); color:#fff; padding:40px 44px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;">
+            <div><h2 style="font-size:28px; letter-spacing:-.6px; font-weight:700; margin:0 0 6px;">Рассчитать на этой основе</h2><p style="font-size:16px; color:#C9D6E6; margin:0;">Выберите технологию, тираж и срок — пришлём расчёт.</p></div>
+            <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 30px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Рассчитать заказ</button>
           </div>
         </section>
       </div>
@@ -508,41 +723,57 @@
             </div>
           </div>
         </div>
-        <!-- hero -->
+        <!-- hero: photo gallery left + info right -->
         <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:32px 0 44px;">
           <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
             <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:20px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span onClick="{{ goServices }}" class="dn-link" style="cursor:pointer;">Услуги</span><span style="color:var(--ink3);">/</span><span>{{ techEx.name }}</span></div>
-            <div style="display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center;" class="dn-hero-grid">
+            <div style="display:grid; grid-template-columns:.9fr 1.1fr; gap:40px; align-items:start;" class="dn-hero-grid">
+              <div>
+                <div style="border-radius:18px; background:linear-gradient(135deg,#E3E9F1,#CDD9E8); height:320px; display:flex; align-items:center; justify-content:center; color:#8EA2BB; font-size:14px; margin-bottom:12px;">пример работы · {{ techEx.name }}</div>
+                <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
+                  <div style="border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:68px; display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:11px; cursor:pointer;">фото 1</div>
+                  <div style="border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:68px; display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:11px; cursor:pointer;">фото 2</div>
+                  <div style="border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:68px; display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:11px; cursor:pointer;">фото 3</div>
+                  <div style="border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:68px; display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:11px; cursor:pointer;">фото 4</div>
+                </div>
+              </div>
               <div>
                 <div style="display:inline-flex; align-items:center; gap:8px; height:28px; padding:0 13px; border-radius:99px; background:#FBEDE2; color:var(--core); font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; margin-bottom:18px;">{{ techEx.badge }}</div>
                 <h1 style="font-size:46px; letter-spacing:-1.3px; font-weight:700; margin:0 0 18px;">{{ techEx.name }}</h1>
                 <p style="font-size:18px; line-height:1.6; color:var(--ink2); margin:0 0 28px; max-width:520px;">{{ techEx.lead }}</p>
-                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:24px;">
                   <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 26px; border:0; border-radius:12px; background:var(--accent); color:#fff; font-weight:600; font-size:15.5px; cursor:pointer; font-family:inherit;">Рассчитать заказ</button>
                   <button onClick="{{ openUpload }}" class="dn-btn" style="height:54px; padding:0 24px; border:1px solid var(--line2); border-radius:12px; background:var(--surface); color:var(--ink); font-weight:600; font-size:15.5px; cursor:pointer; font-family:inherit;">Отправить макет</button>
                 </div>
+                <!-- Limitations sidebar note -->
+                <div style="border-left:3px solid var(--core); padding:14px 18px; background:var(--muted); border-radius:0 12px 12px 0;">
+                  <div style="font-weight:700; font-size:13px; color:var(--core); margin-bottom:4px;">Ограничения</div>
+                  <p style="font-size:13.5px; line-height:1.5; color:var(--ink2); margin:0;">{{ techEx.limits }}</p>
+                </div>
               </div>
-              <div style="border-radius:18px; background:linear-gradient(135deg,#E3E9F1,#CDD9E8); height:300px; display:flex; align-items:center; justify-content:center; color:#8EA2BB; font-size:14px;">пример работы · {{ techEx.name }}</div>
             </div>
           </div>
         </section>
-        <!-- applicability + limits -->
-        <section style="max-width:1240px; margin:0 auto; padding:56px 24px 8px;">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;" class="dn-g2">
-            <div style="border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--surface);">
-              <h3 style="font-size:20px; font-weight:700; margin:0 0 18px;">На каких изделиях применяется</h3>
-              <div style="display:flex; flex-direction:column; gap:12px;">
-                <sc-for list="{{ techEx.suits }}" as="x" hint-placeholder-count="4">
-                  <div style="display:flex; align-items:center; gap:12px; font-size:15px;"><span style="width:24px; height:24px; border-radius:7px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex:none; font-size:14px;">✓</span><span>{{ x }}</span></div>
-                </sc-for>
+
+        <!-- On which items — prominent centered tile grid -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px; text-align:center;">На каких изделиях применяется</h2>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; max-width:900px; margin:0 auto;" class="dn-g4">
+            <sc-for list="{{ techEx.suits }}" as="x" hint-placeholder-count="4">
+              <div style="padding:20px; border:1px solid var(--line); border-radius:14px; background:var(--surface); text-align:center;">
+                <span style="width:36px; height:36px; border-radius:9px; background:var(--soft); color:var(--accent); display:inline-flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:10px;">✓</span>
+                <div style="font-weight:600; font-size:15px;">{{ x }}</div>
               </div>
-            </div>
-            <div style="border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--muted);">
-              <h3 style="font-size:20px; font-weight:700; margin:0 0 14px;">Ограничения</h3>
-              <p style="font-size:15px; line-height:1.6; color:var(--ink2); margin:0;">{{ techEx.limits }}</p>
-            </div>
+            </sc-for>
           </div>
         </section>
+
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">Технология {{ techEx.name }} — одна из ключевых в нашем производстве. Мы подбираем параметры нанесения индивидуально для каждого заказа, учитывая материал основы, размер и детализацию макета, требования к стойкости и бюджет. Ниже — подробности о ценообразовании, возможностях и альтернативных методах.</p>
+          </div>
+        </section>
+
         <!-- price factors -->
         <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
           <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 8px;">От чего зависит цена</h2>
@@ -556,18 +787,36 @@
             </sc-for>
           </div>
         </section>
-        <!-- what they do / details -->
+
+        <!-- details split into two visual sections -->
         <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
           <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">{{ techEx.detailTitle }}</h2>
-          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;" class="dn-g3">
-            <sc-for list="{{ techEx.details }}" as="dd" hint-placeholder-count="6">
-              <div style="padding:20px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
-                <div style="font-weight:600; font-size:15px; margin-bottom:6px;">{{ dd.t }}</div>
-                <div style="font-size:13px; color:var(--ink2); line-height:1.45;">{{ dd.s }}</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;" class="dn-g2">
+            <div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 14px;">Что наносим</h3>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <sc-for list="{{ techEx.detailsWhat }}" as="dd" hint-placeholder-count="3">
+                  <div style="padding:18px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
+                    <div style="font-weight:600; font-size:15px; margin-bottom:4px;">{{ dd.t }}</div>
+                    <div style="font-size:13px; color:var(--ink2); line-height:1.45;">{{ dd.s }}</div>
+                  </div>
+                </sc-for>
               </div>
-            </sc-for>
+            </div>
+            <div>
+              <h3 style="font-size:18px; font-weight:700; margin:0 0 14px;">Чем наносим</h3>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <sc-for list="{{ techEx.detailsHow }}" as="dd" hint-placeholder-count="3">
+                  <div style="padding:18px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
+                    <div style="font-weight:600; font-size:15px; margin-bottom:4px;">{{ dd.t }}</div>
+                    <div style="font-size:13px; color:var(--ink2); line-height:1.45;">{{ dd.s }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
           </div>
         </section>
+
         <!-- related products -->
         <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
           <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 18px;">На чём наносим</h2>
@@ -577,16 +826,35 @@
             </sc-for>
           </div>
         </section>
-        <!-- alternative techs -->
+
+        <!-- alternative techs as prominent tiles -->
         <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
           <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 8px;">Когда выбрать другой метод</h2>
           <p style="font-size:15px; color:var(--ink2); margin:0 0 18px; max-width:640px;">{{ techEx.altNote }}</p>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <sc-for list="{{ techEx.alts }}" as="alt" hint-placeholder-count="3">
-              <span onClick="{{ goTech }}" class="dn-link" style="padding:11px 18px; border:1px solid var(--line2); border-radius:99px; font-weight:600; font-size:14.5px; cursor:pointer; background:var(--surface);">{{ alt }}</span>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;" class="dn-g3">
+            <sc-for list="{{ techEx.altTiles }}" as="alt" hint-placeholder-count="3">
+              <div onClick="{{ goTech }}" class="dn-hov" style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface); cursor:pointer;">
+                <div style="font-weight:700; font-size:16px; margin-bottom:6px; color:var(--accent);">{{ alt.name }}</div>
+                <div style="font-size:13px; color:var(--ink2); line-height:1.5;">{{ alt.why }}</div>
+              </div>
             </sc-for>
           </div>
         </section>
+
+        <!-- video placeholder -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <div style="border-radius:20px; background:linear-gradient(135deg,#E3E9F1,#CDD9E8); height:340px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+            <div style="width:64px; height:64px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:24px; cursor:pointer;">▶</div>
+            <div style="font-weight:700; font-size:18px; color:var(--accent);">{{ techEx.name }} на нашем производстве</div>
+          </div>
+        </section>
+
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">Если вы не уверены, подходит ли {{ techEx.name }} для вашего заказа — отправьте макет или опишите задачу. Менеджер проверит и предложит оптимальную технологию, рассчитает стоимость и срок. Консультация бесплатна.</p>
+          </div>
+        </section>
+
         <!-- cases for this tech -->
         <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
           <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 20px;">Кейсы: {{ techEx.name }}</h2>
@@ -772,6 +1040,245 @@
       </div>
     </sc-if>
 
+    <!-- ============ PRODUCTION ============ -->
+    <sc-if value="{{ isProduction }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Производство">
+        <section style="background:var(--accent); color:#fff; padding:48px 0 52px; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.07) 1px, transparent 0); background-size:24px 24px;"></div>
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px; position:relative;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:#A9BBD0; margin-bottom:20px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer; color:#A9BBD0;">Главная</span><span>/</span><span style="color:#fff;">Производство</span></div>
+            <h1 style="font-size:46px; letter-spacing:-1.3px; font-weight:700; margin:0 0 16px; max-width:740px;">Собственное производство в Москве</h1>
+            <p style="font-size:18px; line-height:1.6; color:#C9D6E6; margin:0 0 28px; max-width:620px;">Более 1 500 м² оборудованных цехов, 10+ технологий нанесения, контроль качества на каждом этапе. Без посредников — всё делаем сами.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 28px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Запросить экскурсию</button>
+            </div>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 0;">
+          <div style="border-radius:20px; background:linear-gradient(135deg,#E3E9F1,#CDD9E8); height:400px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+            <div style="width:72px; height:72px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:28px; cursor:pointer;">▶</div>
+            <div style="font-weight:700; font-size:20px; color:var(--accent);">Видеопрезентация производства</div>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;" class="dn-g4">
+            <sc-for list="{{ productionStats }}" as="ps" hint-placeholder-count="4">
+              <div style="padding:28px; border:1px solid var(--line); border-radius:16px; background:var(--surface); text-align:center;">
+                <div style="font-size:36px; font-weight:700; color:var(--accent); letter-spacing:-1px;">{{ ps.num }}</div>
+                <div style="font-size:14px; color:var(--ink2); margin-top:6px;">{{ ps.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Оборудование</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ productionEquipment }}" as="eq" hint-placeholder-count="6">
+              <div style="padding:24px; border:1px solid var(--line); border-radius:16px; background:var(--surface);">
+                <div style="font-weight:700; font-size:17px; margin-bottom:6px;">{{ eq.name }}</div>
+                <div style="font-size:13.5px; color:var(--ink2); line-height:1.5;">{{ eq.desc }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Контроль качества</h2>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;" class="dn-g4">
+            <sc-for list="{{ productionQuality }}" as="pq" hint-placeholder-count="4">
+              <div style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
+                <div style="width:40px; height:40px; border-radius:10px; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; margin-bottom:14px;">{{ pq.n }}</div>
+                <div style="font-weight:600; font-size:15px; line-height:1.3;">{{ pq.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;" class="dn-g2">
+            <div style="border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--surface);">
+              <h3 style="font-size:20px; font-weight:700; margin:0 0 18px;">Сертификаты и реестры</h3>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <sc-for list="{{ productionCerts }}" as="cert" hint-placeholder-count="4">
+                  <div style="display:flex; align-items:center; gap:12px; font-size:15px;"><span style="width:24px; height:24px; border-radius:7px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex:none; font-size:14px;">✓</span><span>{{ cert }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="border-radius:18px; background:linear-gradient(135deg,#E3E9F1,#CDD9E8); height:280px; display:flex; align-items:center; justify-content:center; color:#8EA2BB; font-size:14px;">фото производственного цеха</div>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 72px;">
+          <div style="border-radius:20px; background:var(--accent); color:#fff; padding:40px 44px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;">
+            <div><h2 style="font-size:28px; letter-spacing:-.6px; font-weight:700; margin:0 0 6px;">Посетите производство</h2><p style="font-size:16px; color:#C9D6E6; margin:0;">Приглашаем на экскурсию — покажем оборудование и процесс.</p></div>
+            <button onClick="{{ openCalc }}" class="dn-btn" style="height:54px; padding:0 30px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Записаться</button>
+          </div>
+        </section>
+      </div>
+    </sc-if>
+
+    <!-- ============ ARTWORK ============ -->
+    <sc-if value="{{ isArtwork }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Требования к макетам">
+        <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:36px 0 40px;">
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:18px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span>Требования к макетам</span></div>
+            <h1 style="font-size:42px; letter-spacing:-1.2px; font-weight:700; margin:0 0 14px; max-width:760px;">Требования к макетам</h1>
+            <p style="font-size:18px; color:var(--ink2); line-height:1.55; margin:0 0 24px; max-width:620px;">Правильно подготовленный макет — залог качественного нанесения. Ниже — требования для каждой технологии и частые ошибки.</p>
+            <button onClick="{{ openUpload }}" class="dn-btn" style="height:52px; padding:0 26px; border:0; border-radius:12px; background:var(--accent); color:#fff; font-weight:600; font-size:15.5px; cursor:pointer; font-family:inherit;">Отправить макет на проверку</button>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:40px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Форматы файлов</h2>
+          <div style="overflow-x:auto; border:1px solid var(--line); border-radius:16px; background:var(--surface);" class="dn-scroll">
+            <table style="width:100%; border-collapse:collapse; font-size:14px; min-width:600px;">
+              <thead>
+                <tr style="background:var(--muted); text-align:left;">
+                  <th style="padding:14px 16px; font-weight:700; border-bottom:1px solid var(--line);">Формат</th>
+                  <th style="padding:14px 16px; font-weight:700; border-bottom:1px solid var(--line);">Применение</th>
+                  <th style="padding:14px 16px; font-weight:700; border-bottom:1px solid var(--line);">Примечание</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ artworkFormats }}" as="af" hint-placeholder-count="5">
+                  <tr style="border-bottom:1px solid var(--line);">
+                    <td style="padding:12px 16px; font-weight:600;">{{ af.format }}</td>
+                    <td style="padding:12px 16px; color:var(--ink2);">{{ af.use }}</td>
+                    <td style="padding:12px 16px; color:var(--ink2);">{{ af.note }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Требования по технологиям</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ artworkByTech }}" as="at" hint-placeholder-count="6">
+              <div style="padding:24px; border:1px solid var(--line); border-radius:16px; background:var(--surface);">
+                <div style="font-weight:700; font-size:17px; margin-bottom:8px;">{{ at.tech }}</div>
+                <div style="font-size:13.5px; color:var(--ink2); line-height:1.6;">{{ at.req }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Частые ошибки</h2>
+          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px;" class="dn-g2">
+            <sc-for list="{{ artworkMistakes }}" as="am" hint-placeholder-count="4">
+              <div style="padding:20px; border:1px solid #F5D4D4; border-radius:14px; background:#FFF8F8; display:flex; gap:14px; align-items:flex-start;">
+                <span style="width:28px; height:28px; border-radius:8px; background:#F5D4D4; color:#C33; display:flex; align-items:center; justify-content:center; flex:none; font-weight:700; font-size:14px;">✕</span>
+                <div><div style="font-weight:600; font-size:15px; margin-bottom:4px;">{{ am.mistake }}</div><div style="font-size:13px; color:var(--ink2); line-height:1.5;">{{ am.fix }}</div></div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 72px;">
+          <div style="border-radius:20px; background:var(--accent); color:#fff; padding:40px 44px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;">
+            <div><h2 style="font-size:28px; letter-spacing:-.6px; font-weight:700; margin:0 0 6px;">Не уверены в макете?</h2><p style="font-size:16px; color:#C9D6E6; margin:0;">Отправьте файл — проверим и подскажем, что исправить. Бесплатно.</p></div>
+            <button onClick="{{ openUpload }}" class="dn-btn" style="height:54px; padding:0 30px; border:0; border-radius:12px; background:#fff; color:var(--accent); font-weight:700; font-size:16px; cursor:pointer; font-family:inherit;">Отправить макет</button>
+          </div>
+        </section>
+      </div>
+    </sc-if>
+
+    <!-- ============ DELIVERY ============ -->
+    <sc-if value="{{ isDelivery }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Доставка и оплата">
+        <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:36px 0 40px;">
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:18px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span>Доставка и оплата</span></div>
+            <h1 style="font-size:42px; letter-spacing:-1.2px; font-weight:700; margin:0 0 14px;">Доставка и оплата</h1>
+            <p style="font-size:18px; color:var(--ink2); line-height:1.55; margin:0; max-width:620px;">Доставляем по Москве и всей России. Работаем по договору с НДС. Полный документооборот.</p>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:40px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Способы доставки</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ deliveryMethods }}" as="dm" hint-placeholder-count="3">
+              <div style="padding:24px; border:1px solid var(--line); border-radius:16px; background:var(--surface);">
+                <div style="font-weight:700; font-size:17px; margin-bottom:8px;">{{ dm.name }}</div>
+                <div style="font-size:14px; color:var(--ink2); line-height:1.6;">{{ dm.desc }}</div>
+                <div style="font-size:13px; color:var(--accent); font-weight:600; margin-top:10px;">{{ dm.price }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Условия оплаты</h2>
+          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;" class="dn-g2">
+            <sc-for list="{{ paymentTerms }}" as="pt" hint-placeholder-count="4">
+              <div style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface); display:flex; gap:14px; align-items:flex-start;">
+                <span style="width:36px; height:36px; border-radius:9px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; flex:none; font-weight:700;">✓</span>
+                <div><div style="font-weight:600; font-size:15px; margin-bottom:3px;">{{ pt.name }}</div><div style="font-size:13px; color:var(--ink2);">{{ pt.desc }}</div></div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;" class="dn-g2">
+            <div style="border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--surface);">
+              <h3 style="font-size:20px; font-weight:700; margin:0 0 16px;">География</h3>
+              <p style="font-size:15px; line-height:1.6; color:var(--ink2); margin:0;">Доставляем по всей России транспортными компаниями СДЭК, ПЭК, Деловые линии. Экспресс-доставка по Москве и области — в день готовности. Самовывоз из цеха — 24/7.</p>
+            </div>
+            <div style="border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--surface);">
+              <h3 style="font-size:20px; font-weight:700; margin:0 0 16px;">Документооборот</h3>
+              <p style="font-size:15px; line-height:1.6; color:var(--ink2); margin:0;">Работаем по договору, счёт + акт + УПД. НДС 20%. Предоставляем полный пакет закрывающих документов для бухгалтерии.</p>
+            </div>
+          </div>
+        </section>
+        <div style="height:72px;"></div>
+      </div>
+    </sc-if>
+
+    <!-- ============ CONTACTS ============ -->
+    <sc-if value="{{ isContacts }}" hint-placeholder-val="{{ false }}">
+      <div data-screen-label="Контакты">
+        <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:36px 0 40px;">
+          <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
+            <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:18px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span>Контакты</span></div>
+            <h1 style="font-size:42px; letter-spacing:-1.2px; font-weight:700; margin:0 0 14px;">Контакты</h1>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:40px 24px 8px;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;" class="dn-g2">
+            <div>
+              <div style="display:flex; flex-direction:column; gap:20px;">
+                <div style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
+                  <div style="font-size:13px; color:var(--ink3); margin-bottom:4px;">Адрес</div>
+                  <div style="font-weight:700; font-size:17px;">Москва, Остаповский проезд, д. 3, стр. 24</div>
+                  <div style="font-size:14px; color:var(--ink2); margin-top:4px;">м. Волгоградский проспект, 5 мин на транспорте</div>
+                </div>
+                <div style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
+                  <div style="font-size:13px; color:var(--ink3); margin-bottom:4px;">Телефон</div>
+                  <a href="tel:+74951814747" style="font-weight:700; font-size:22px; color:var(--ink); text-decoration:none;">+7 (495) 181-47-47</a>
+                </div>
+                <div style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
+                  <div style="font-size:13px; color:var(--ink3); margin-bottom:4px;">Email</div>
+                  <div style="font-weight:700; font-size:17px;">zakaz@deana.ru</div>
+                </div>
+                <div style="padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface);">
+                  <div style="font-size:13px; color:var(--ink3); margin-bottom:4px;">Режим работы</div>
+                  <div style="font-weight:700; font-size:17px;">Круглосуточно, 24/7</div>
+                  <div style="font-size:14px; color:var(--ink2); margin-top:4px;">Производство и приём заказов — без выходных</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div style="border-radius:18px; background:linear-gradient(135deg,#E3E9F1,#CDD9E8); height:280px; display:flex; align-items:center; justify-content:center; color:#8EA2BB; font-size:14px; margin-bottom:20px;">карта · Яндекс.Карты</div>
+              <div style="border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--surface);">
+                <h3 style="font-size:18px; font-weight:700; margin:0 0 16px;">Написать нам</h3>
+                <div style="display:flex; flex-direction:column; gap:12px;">
+                  <input placeholder="Имя" style="height:48px; padding:0 16px; border:1.5px solid var(--line2); border-radius:12px; font-size:15px; font-family:inherit; outline:none;">
+                  <input placeholder="Телефон или email" style="height:48px; padding:0 16px; border:1.5px solid var(--line2); border-radius:12px; font-size:15px; font-family:inherit; outline:none;">
+                  <textarea placeholder="Сообщение" style="min-height:80px; padding:14px 16px; border:1.5px solid var(--line2); border-radius:12px; font-size:15px; font-family:inherit; outline:none; resize:vertical;"></textarea>
+                  <button onClick="{{ openCalc }}" class="dn-btn" style="height:50px; border:0; border-radius:12px; background:var(--accent); color:#fff; font-weight:600; font-size:15px; cursor:pointer; font-family:inherit;">Отправить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div style="height:72px;"></div>
+      </div>
+    </sc-if>
+
     <!-- ============ CASES LIST ============ -->
     <sc-if value="{{ isCases }}" hint-placeholder-val="{{ false }}">
       <div data-screen-label="Кейсы">
@@ -874,6 +1381,23 @@
           </div>
         </section>
         <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Каталог изделий</h2>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;" class="dn-g4">
+            <sc-for list="{{ sewingCatalog }}" as="sc" hint-placeholder-count="4">
+              <div onClick="{{ sc.onClick }}" class="dn-hov" style="padding:18px; border:1px solid var(--line); border-radius:14px; background:var(--surface); cursor:pointer;">
+                <div style="height:100px; border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:12px; margin-bottom:12px;">фото</div>
+                <div style="font-weight:600; font-size:15px; margin-bottom:3px;">{{ sc.name }}</div>
+                <div style="font-size:12.5px; color:var(--ink2);">{{ sc.note }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">Качество пошива контролируется на каждом этапе: от раскроя до финальной проверки швов. Мы используем промышленное оборудование Juki, работаем с проверенными тканями и предоставляем образец до запуска тиража. Минимальный заказ — от 50 штук.</p>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;" class="dn-g2">
             <div style="border:1px solid var(--line); border-radius:16px; padding:28px; background:var(--surface);">
               <h3 style="font-size:20px; font-weight:700; margin:0 0 18px;">Ткани и материалы</h3>
@@ -955,6 +1479,23 @@
           </div>
         </section>
         <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Оптовые категории</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
+            <sc-for list="{{ wholesaleCategories }}" as="wc" hint-placeholder-count="6">
+              <div onClick="{{ wc.onClick }}" class="dn-hov" style="padding:24px; border:1px solid var(--line); border-radius:16px; background:var(--surface); cursor:pointer;">
+                <div style="font-weight:700; font-size:17px; margin-bottom:6px;">{{ wc.name }}</div>
+                <div style="font-size:13.5px; color:var(--ink2); line-height:1.5;">{{ wc.desc }}</div>
+                <div style="font-size:13px; font-weight:600; color:var(--accent); margin-top:10px;">от {{ wc.minQty }} шт →</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:32px 24px 0;">
+          <div style="max-width:800px;">
+            <p style="font-size:16px; line-height:1.7; color:var(--ink2); margin:0;">Для оптовых заказов предусмотрены специальные условия: фиксированные цены при крупных тиражах, выделенный менеджер, приоритетные сроки производства и гибкая система оплаты. Запросите коммерческое предложение — подготовим индивидуальный расчёт.</p>
+          </div>
+        </section>
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
           <h2 style="font-size:30px; letter-spacing:-.7px; font-weight:700; margin:0 0 24px;">Кейсы</h2>
           <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;" class="dn-g3">
             <sc-for list="{{ caseTeaser }}" as="c" hint-placeholder-count="3">
@@ -982,6 +1523,16 @@
             <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:20px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span onClick="{{ goProducts }}" class="dn-link" style="cursor:pointer;">Что брендируем</span><span style="color:var(--ink3);">/</span><span>{{ productCard.name }}</span></div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;" class="dn-hero-grid">
               <div>
+                <!-- Photo gallery placeholder -->
+                <div style="border-radius:18px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:340px; display:flex; align-items:center; justify-content:center; color:#8EA2BB; font-size:14px; margin-bottom:12px;">фото · {{ productCard.name }}</div>
+                <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
+                  <div style="border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:68px; display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:11px; cursor:pointer; border:2px solid var(--accent);">фото 1</div>
+                  <div style="border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:68px; display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:11px; cursor:pointer;">фото 2</div>
+                  <div style="border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:68px; display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:11px; cursor:pointer;">фото 3</div>
+                  <div style="border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:68px; display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:11px; cursor:pointer;">фото 4</div>
+                </div>
+              </div>
+              <div>
                 <h1 style="font-size:42px; letter-spacing:-1.2px; font-weight:700; margin:0 0 16px;">{{ productCard.name }}</h1>
                 <p style="font-size:17px; line-height:1.6; color:var(--ink2); margin:0 0 24px;">{{ productCard.desc }}</p>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:24px;">
@@ -997,7 +1548,6 @@
                   <button onClick="{{ openUpload }}" class="dn-btn" style="height:52px; padding:0 22px; border:1px solid var(--line2); border-radius:12px; background:var(--surface); color:var(--ink); font-weight:600; font-size:15px; cursor:pointer; font-family:inherit;">Отправить макет</button>
                 </div>
               </div>
-              <div style="border-radius:18px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); height:340px; display:flex; align-items:center; justify-content:center; color:#8EA2BB; font-size:14px;">фото · {{ productCard.name }}</div>
             </div>
           </div>
         </section>
@@ -1012,11 +1562,36 @@
             </sc-for>
           </div>
         </section>
+        <!-- Related models/variants -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 20px;">Похожие модели</h2>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;" class="dn-g4">
+            <sc-for list="{{ productCardVariants }}" as="pv" hint-placeholder-count="4">
+              <div onClick="{{ pv.onClick }}" class="dn-hov" style="padding:18px; border:1px solid var(--line); border-radius:14px; background:var(--surface); cursor:pointer;">
+                <div style="height:100px; border-radius:10px; background:linear-gradient(135deg,#E9EFF6,#DCE5EF); display:flex; align-items:center; justify-content:center; color:#9DB0C6; font-size:12px; margin-bottom:12px;">фото</div>
+                <div style="font-weight:600; font-size:15px; margin-bottom:3px;">{{ pv.name }}</div>
+                <div style="font-size:12.5px; color:var(--ink2);">{{ pv.note }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
         <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
           <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 20px;">Популярные задачи</h2>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <sc-for list="{{ productCard.subpages }}" as="sub" hint-placeholder-count="4">
               <span onClick="{{ sub.onClick }}" class="dn-hov" style="padding:13px 20px; border:1px solid var(--line); border-radius:12px; font-weight:600; font-size:14px; cursor:pointer; background:var(--surface);">{{ sub.label }} →</span>
+            </sc-for>
+          </div>
+        </section>
+        <!-- Product FAQ -->
+        <section style="max-width:900px; margin:0 auto; padding:48px 24px 8px;">
+          <h2 style="font-size:26px; letter-spacing:-.5px; font-weight:700; margin:0 0 20px;">Вопросы по изделию</h2>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <sc-for list="{{ productCardFaq }}" as="pf" hint-placeholder-count="3">
+              <div style="border:1px solid var(--line); border-radius:14px; background:var(--surface); padding:18px 22px;">
+                <div style="font-weight:600; font-size:15px; margin-bottom:6px;">{{ pf.q }}</div>
+                <div style="font-size:14px; color:var(--ink2); line-height:1.6;">{{ pf.a }}</div>
+              </div>
             </sc-for>
           </div>
         </section>
@@ -1059,6 +1634,37 @@
                 </div>
               </div>
             </sc-for>
+          </div>
+        </section>
+        <!-- Article preview -->
+        <section style="max-width:1240px; margin:0 auto; padding:48px 24px 8px;">
+          <div style="display:grid; grid-template-columns:1fr 300px; gap:32px;" class="dn-g2">
+            <div style="border:1px solid var(--line); border-radius:16px; padding:32px; background:var(--surface);">
+              <div style="display:flex; gap:8px; margin-bottom:16px;">
+                <span style="font-size:11.5px; font-weight:600; color:var(--accent); background:var(--soft); padding:4px 10px; border-radius:99px;">{{ blogArticle.cat }}</span>
+                <span style="font-size:11.5px; color:var(--ink3); padding:4px 0;">{{ blogArticle.date }}</span>
+              </div>
+              <h2 style="font-size:28px; letter-spacing:-.6px; font-weight:700; margin:0 0 16px;">{{ blogArticle.title }}</h2>
+              <div style="font-size:15px; line-height:1.7; color:var(--ink2);">{{ blogArticle.body }}</div>
+            </div>
+            <div>
+              <div style="border:1px solid var(--line); border-radius:16px; padding:22px; background:var(--surface); margin-bottom:16px;">
+                <h3 style="font-size:16px; font-weight:700; margin:0 0 14px;">Рубрики</h3>
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                  <sc-for list="{{ blogFilters }}" as="bf" hint-placeholder-count="5">
+                    <span onClick="{{ bf.onClick }}" class="dn-link" style="font-size:14px; color:var(--ink2); cursor:pointer; padding:6px 0;">{{ bf.label }}</span>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="border:1px solid var(--line); border-radius:16px; padding:22px; background:var(--surface);">
+                <h3 style="font-size:16px; font-weight:700; margin:0 0 14px;">Связанные материалы</h3>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                  <sc-for list="{{ blogRelated }}" as="br" hint-placeholder-count="3">
+                    <div class="dn-link" style="font-size:14px; color:var(--accent); cursor:pointer; font-weight:500;">{{ br }} →</div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <div style="height:72px;"></div>
@@ -1354,7 +1960,8 @@ class Component extends DCLogic {
       { label: 'Пошив', hasMenu: false, onEnter: () => this.closeMega(), onClick: () => this.go('sewing') },
       { label: 'Для бизнеса', hasMenu: true, onEnter: () => this.openMega('industries'), onClick: () => this.go('industriesRoot') },
       { label: 'Кейсы', hasMenu: false, onEnter: () => this.closeMega(), onClick: () => this.go('cases') },
-      { label: 'Производство', hasMenu: false, onEnter: () => this.closeMega(), onClick: () => this.go('complex') },
+      { label: 'Производство', hasMenu: false, onEnter: () => this.closeMega(), onClick: () => this.go('production') },
+      { label: 'Комплексный заказ', hasMenu: false, onEnter: () => this.closeMega(), onClick: () => this.go('complex') },
     ];
 
     const megaMap = {
@@ -1424,16 +2031,15 @@ class Component extends DCLogic {
       { name: 'DTF / DTG', desc: 'Полноцветная печать с фотоградиентами на малых тиражах.', icon: I.dtf, core: false },
       { name: 'УФ-печать', desc: 'Печать по жёстким основам: таблички, сувениры, пластик.', icon: I.uv, core: false },
       { name: 'Лазерная гравировка', desc: 'Металл, дерево, стекло, пластик. Долговечная маркировка.', icon: I.laser, core: false },
-      { name: 'Лазерная резка', desc: 'Точный раскрой шильдов, табличек, ложементов.', icon: I.cut, core: false },
       { name: 'Тиснение', desc: 'Фольга и блинт на представительской продукции.', icon: I.emboss, core: false },
       { name: 'Сублимация', desc: 'Полный цвет на синтетике и спортивной экипировке.', icon: I.sub, core: false },
       { name: 'Термотрансфер', desc: 'Плёночный перенос на ткань. Надписи, номера, мелкие тиражи.', icon: I.thermo, core: false },
     ].map(x => ({ ...x, onClick: () => this.go('tech') }));
 
     const productGroups = [
-      { name: 'Одежда', items: 'Футболки, поло, толстовки, кепки, спецодежда, халаты', ph: 'фото изделий', onClick: () => this.go('product') },
-      { name: 'Технические изделия', items: 'Шильды, таблички, бейджи, номерки, наклейки, ложементы', ph: 'фото изделий', onClick: () => this.go('product') },
-      { name: 'Текстиль и представительское', items: 'Шевроны, нашивки, вымпелы, наградные дипломы', ph: 'фото изделий', onClick: () => this.go('product') },
+      { name: 'Одежда', items: 'Футболки, поло, толстовки, кепки, спецодежда, халаты', ph: 'фото изделий', count: '6 позиций', onClick: () => this.go('product') },
+      { name: 'Технические изделия', items: 'Шильды, таблички, бейджи, номерки, наклейки, ложементы', ph: 'фото изделий', count: '6 позиций', onClick: () => this.go('product') },
+      { name: 'Текстиль и представительское', items: 'Шевроны, нашивки, вымпелы, наградные дипломы', ph: 'фото изделий', count: '4 позиции', onClick: () => this.go('product') },
     ];
 
     const industries = [
@@ -1470,15 +2076,19 @@ class Component extends DCLogic {
       { label: 'Что брендируем', sub: 'изделия', onClick: () => this.go('products') },
       { label: 'Пошив одежды', sub: 'полный цикл', onClick: () => this.go('sewing') },
       { label: 'Для бизнеса', sub: 'отрасли', onClick: () => this.go('industriesRoot') },
+      { label: 'Производство', sub: 'о компании', onClick: () => this.go('production') },
       { label: 'Комплексный заказ', sub: 'под ключ', onClick: () => this.go('complex') },
       { label: 'Кейсы', sub: '', onClick: () => this.go('cases') },
       { label: 'Блог', sub: 'статьи', onClick: () => this.go('blog') },
+      { label: 'Требования к макетам', sub: '', onClick: () => this.go('artwork') },
+      { label: 'Доставка и оплата', sub: '', onClick: () => this.go('delivery') },
+      { label: 'Контакты', sub: '', onClick: () => this.go('contacts') },
     ];
 
     const footCols = [
       { title: 'Технологии', links: [['Машинная вышивка','tech'],['Шелкография','tech'],['DTF / DTG','tech'],['УФ-печать','tech'],['Термотрансфер','tech'],['Лазерная гравировка','tech']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
       { title: 'Изделия', links: [['Футболки и поло','productCard'],['Кепки','productCard'],['Шильды и таблички','productCard'],['Бейджи и номерки','productCard'],['Шевроны и нашивки','productCard'],['Пошив одежды','sewing']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
-      { title: 'Компания', links: [['О производстве','complex'],['Кейсы','cases'],['Решения для бизнеса','industriesRoot'],['Комплексный заказ','complex'],['Блог и статьи','blog'],['Требования к макетам','blog'],['Доставка и оплата','complex'],['Контакты','cases']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
+      { title: 'Компания', links: [['Производство','production'],['Кейсы','cases'],['Решения для бизнеса','industriesRoot'],['Комплексный заказ','complex'],['Блог и статьи','blog'],['Требования к макетам','artwork'],['Доставка и оплата','delivery'],['Контакты','contacts']].map(([label,p]) => ({ label, onClick: () => this.go(p) })) },
     ];
 
     // ----- calc modal data -----
@@ -1683,6 +2293,166 @@ class Component extends DCLogic {
     ];
     const blogPosts = s.blogFilter === 'Все' ? allBlogPosts : allBlogPosts.filter(p => p.cat === s.blogFilter);
 
+    const blogArticle = {
+      cat: 'Технологии', date: '20 июня 2026',
+      title: 'Вышивка vs шелкография: что выбрать для корпоративной формы',
+      body: 'Два самых популярных метода нанесения логотипа на одежду — машинная вышивка и шелкография. Вышивка даёт объёмный, премиальный результат, стойкий к стиркам и УФ. Шелкография дешевле на больших тиражах и передаёт плашечные цвета. Выбор зависит от тиража, бюджета и требований к внешнему виду. Подробнее — в полной версии статьи.',
+    };
+    const blogRelated = ['Как подготовить макет для вышивки', 'DTF-печать: когда это лучший выбор', 'Какую ткань выбрать для футболок'];
+
+    // ===== SERVICES PAGE DATA =====
+    const comparisonRows = [
+      { tech: 'Машинная вышивка', base: 'Ткань, одежда', qty: 'от 1 шт', colors: 'до 15 цветов нити', durability: 'Максимальная' },
+      { tech: 'Шелкография', base: 'Ткань', qty: 'от 30 шт', colors: 'до 6 цветов', durability: 'Высокая' },
+      { tech: 'DTF / DTG', base: 'Ткань', qty: 'от 1 шт', colors: 'Полноцвет', durability: 'Средняя' },
+      { tech: 'УФ-печать', base: 'Жёсткие основы', qty: 'от 1 шт', colors: 'Полноцвет', durability: 'Высокая' },
+      { tech: 'Лазерная гравировка', base: 'Металл, дерево, пластик', qty: 'от 1 шт', colors: '1 цвет', durability: 'Максимальная' },
+      { tech: 'Тиснение', base: 'Кожа, картон, бумага', qty: 'от 50 шт', colors: '1–2 цвета', durability: 'Высокая' },
+      { tech: 'Сублимация', base: 'Синтетика, полиэстер', qty: 'от 1 шт', colors: 'Полноцвет', durability: 'Высокая' },
+      { tech: 'Термотрансфер', base: 'Ткань', qty: 'от 1 шт', colors: 'до 4 цветов', durability: 'Средняя' },
+    ];
+    const serviceScenarios = [
+      { q: 'Нужен логотип на одежде?', a: 'Вышивка — для премиального вида, DTF — для полноцвета, шелкография — для тиражей от 30 шт.' },
+      { q: 'Печать на жёсткой основе?', a: 'УФ-печать по пластику, акрилу, металлу. Лазерная гравировка для долговечной маркировки.' },
+      { q: 'Малый тираж, сложный макет?', a: 'DTF-печать — полноцвет без трафаретов, выгодна от 1 шт.' },
+      { q: 'Крупный тираж, простой рисунок?', a: 'Шелкография — чем больше тираж, тем ниже цена единицы.' },
+    ];
+    const techSubstrate = [
+      { tech: 'Вышивка', items: 'Футболки, поло, кепки, спецодежда, халаты', onClick: () => this.go('tech') },
+      { tech: 'Шелкография', items: 'Футболки, толстовки, сумки, промо-текстиль', onClick: () => this.go('tech') },
+      { tech: 'DTF / DTG', items: 'Любая ткань, малые тиражи', onClick: () => this.go('tech') },
+      { tech: 'УФ-печать', items: 'Таблички, шильды, сувениры, пластик', onClick: () => this.go('tech') },
+      { tech: 'Гравировка', items: 'Металл, дерево, стекло, пластик', onClick: () => this.go('tech') },
+      { tech: 'Сублимация', items: 'Синтетика, полиэстер, спортивная форма', onClick: () => this.go('tech') },
+    ];
+    const serviceReviews = [
+      { text: 'Заказываем вышивку на корпоративную форму уже 3 года. Качество стабильное, сроки соблюдают.', name: 'Алексей М.', role: 'Руководитель отдела закупок' },
+      { text: 'Сделали 5000 футболок с шелкографией за 9 дней. Всё чётко, без сюрпризов.', name: 'Мария К.', role: 'Event-менеджер' },
+      { text: 'УФ-печать на табличках — отличный результат. Рекомендую для навигации и маркировки.', name: 'Дмитрий В.', role: 'Директор по производству' },
+    ];
+
+    // ===== PRODUCTION PAGE DATA =====
+    const productionStats = [
+      { num: '1500+', label: 'м² производства' }, { num: '10+', label: 'технологий' },
+      { num: '24/7', label: 'работаем' }, { num: '1000+', label: 'клиентов' },
+    ];
+    const productionEquipment = [
+      { name: 'Tajima TMCE', desc: 'Многоголовочные вышивальные машины. До 15 цветов, скорость до 1200 ст/мин.' },
+      { name: 'Mimaki UJF-6042', desc: 'УФ-планшетный принтер. Печать по жёстким основам до 153×610 мм.' },
+      { name: 'Roland VersaSTUDIO', desc: 'Принтер-каттер для термотрансферных плёнок и наклеек.' },
+      { name: 'Epson SureColor F6370', desc: 'Сублимационный принтер. Полноцвет по синтетике и спортивной форме.' },
+      { name: 'Лазерный комплекс Fiber 50W', desc: 'Гравировка и резка металла, дерева, акрила. Точность 0.01 мм.' },
+      { name: 'Шелкографический станок', desc: 'Карусельный полуавтомат на 6 цветов. Тиражи от 30 шт.' },
+    ];
+    const productionQuality = [
+      { n: '1', label: 'Проверка макета и материалов' },
+      { n: '2', label: 'Утверждение образца' },
+      { n: '3', label: 'Контроль в процессе' },
+      { n: '4', label: 'Финальная приёмка партии' },
+    ];
+    const productionCerts = [
+      'Портал поставщиков ЕАИСТ',
+      'Сертификат ISO 9001 (система менеджмента качества)',
+      'Членство в ТПП Москвы',
+      'Реестр добросовестных поставщиков',
+    ];
+
+    // ===== ARTWORK PAGE DATA =====
+    const artworkFormats = [
+      { format: 'AI / CDR', use: 'Вышивка, шелкография, резка', note: 'Векторный формат — предпочтительный' },
+      { format: 'PDF', use: 'Все технологии', note: 'Вектор в PDF, не растр' },
+      { format: 'SVG', use: 'Гравировка, резка, УФ', note: 'Открытый векторный формат' },
+      { format: 'PNG / TIFF', use: 'DTF, УФ-печать', note: 'Растр от 300 dpi, прозрачный фон' },
+      { format: 'PSD', use: 'DTF, сублимация', note: 'Слои, CMYK, 300 dpi' },
+    ];
+    const artworkByTech = [
+      { tech: 'Машинная вышивка', req: 'Вектор (AI/CDR/PDF). Минимальный элемент — 1.5 мм. Цвета нити по Pantone или Madeira. Мы выполним дигитайзинг.' },
+      { tech: 'Шелкография', req: 'Вектор с разбивкой по цветам. Каждый цвет — отдельный слой. Без градиентов и полутонов.' },
+      { tech: 'DTF / DTG', req: 'Растр 300 dpi, PNG с прозрачным фоном. CMYK. Допускаются фотоизображения и градиенты.' },
+      { tech: 'УФ-печать', req: 'Вектор или растр 300 dpi. Размер 1:1. Указать белую подложку, если нужна.' },
+      { tech: 'Лазерная гравировка', req: 'Вектор (AI/CDR/SVG). Линии — hairline. Заливка = гравировка, контур = резка.' },
+      { tech: 'Сублимация', req: 'Растр 300 dpi, CMYK. Зеркальное отражение не нужно — делаем сами.' },
+    ];
+    const artworkMistakes = [
+      { mistake: 'Растровый логотип низкого разрешения', fix: 'Отправьте векторный файл или растр от 300 dpi. Увеличение маленького файла не улучшит качество.' },
+      { mistake: 'Цвета в RGB вместо CMYK/Pantone', fix: 'Для печати нужен CMYK, для вышивки — Pantone или номер нити. RGB даёт непредсказуемый цвет.' },
+      { mistake: 'Слишком мелкие элементы', fix: 'Для вышивки минимум 1.5 мм, для шелкографии — 0.5 мм. Мелкий текст не читается.' },
+      { mistake: 'Макет не в масштабе 1:1', fix: 'Укажите точный размер нанесения в мм. Без масштаба мы не можем оценить стоимость.' },
+    ];
+
+    // ===== DELIVERY PAGE DATA =====
+    const deliveryMethods = [
+      { name: 'Самовывоз', desc: 'Из цеха на Остаповском проезде. Круглосуточно, 24/7. Можно осмотреть заказ на месте.', price: 'Бесплатно' },
+      { name: 'Курьер по Москве', desc: 'Доставка в день готовности или на следующий рабочий день. До двери офиса или склада.', price: 'от 500 ₽' },
+      { name: 'ТК по России', desc: 'СДЭК, ПЭК, Деловые линии. Отгрузка в день готовности, трек-номер сразу.', price: 'по тарифу ТК' },
+    ];
+    const paymentTerms = [
+      { name: 'Безналичный расчёт', desc: 'По счёту с НДС 20%. Договор, акт, УПД.' },
+      { name: 'Предоплата 50/50', desc: '50% аванс, 50% перед отгрузкой. Стандартная схема.' },
+      { name: 'Постоплата', desc: 'Для постоянных клиентов с договором — отсрочка до 14 дней.' },
+      { name: 'Наличные', desc: 'При самовывозе. Кассовый чек.' },
+    ];
+
+    // ===== WHOLESALE CATEGORIES =====
+    const wholesaleCategories = [
+      { name: 'Вышивка оптом', desc: 'Футболки, поло, кепки, спецодежда, шевроны. MOQ от 30 шт.', minQty: '30', onClick: () => this.go('tech') },
+      { name: 'Печать оптом', desc: 'Шелкография: футболки, толстовки, промо-одежда, спецодежда.', minQty: '50', onClick: () => this.go('tech') },
+      { name: 'DTF/DTG оптом', desc: 'Полноцвет на малых и средних тиражах без трафаретов.', minQty: '20', onClick: () => this.go('tech') },
+      { name: 'Гравировка / УФ-печать оптом', desc: 'Шильды, таблички, бейджи, номерки, маркировка.', minQty: '50', onClick: () => this.go('tech') },
+      { name: 'Пошив и мерч оптом', desc: 'Пошив по лекалам + нанесение. Форма, промо, спецодежда.', minQty: '50', onClick: () => this.go('sewing') },
+      { name: 'Термотрансфер оптом', desc: 'Надписи, номера на одежде. Быстро, от 1 дня.', minQty: '20', onClick: () => this.go('tech') },
+    ];
+
+    // ===== SEWING CATALOG =====
+    const sewingCatalog = [
+      { name: 'Футболки', note: 'Хлопок 150–190 г, от 50 шт', onClick: () => this.go('productCard') },
+      { name: 'Поло', note: 'Пике, воротник, от 50 шт', onClick: () => this.go('productCard') },
+      { name: 'Толстовки', note: 'Футер 280–340 г, от 30 шт', onClick: () => this.go('productCard') },
+      { name: 'Куртки', note: 'Оксфорд, мембрана, от 20 шт', onClick: () => this.go('productCard') },
+    ];
+
+    // ===== PRODUCTS CATALOG CARDS =====
+    const productCatalogCards = [
+      { name: 'Футболки', note: 'Хлопок, от 1 шт', icon: I.shirt, onClick: () => this.go('productCard') },
+      { name: 'Поло', note: 'Пике, воротник', icon: I.shirt, onClick: () => this.go('productCard') },
+      { name: 'Кепки', note: '5–6 клиньев', icon: I.cap, onClick: () => this.go('productCard') },
+      { name: 'Толстовки', note: 'Футер, начёс', icon: I.shirt, onClick: () => this.go('productCard') },
+      { name: 'Шильды', note: 'Алюминий, нерж.', icon: I.plate, onClick: () => this.go('productCard') },
+      { name: 'Бейджи', note: 'Пластик, металл', icon: I.badge, onClick: () => this.go('productCard') },
+      { name: 'Шевроны', note: 'Вышивка, сублимация', icon: I.patch, onClick: () => this.go('productCard') },
+      { name: 'Таблички', note: 'ПВХ, акрил, металл', icon: I.plate, onClick: () => this.go('productCard') },
+    ];
+
+    // ===== PRODUCT CARD VARIANTS & FAQ =====
+    const productCardVariants = [
+      { name: 'Поло', note: 'Пике, воротник, S–3XL', onClick: () => this.go('productCard') },
+      { name: 'Толстовки', note: 'Футер 280–340 г', onClick: () => this.go('productCard') },
+      { name: 'Кепки', note: '5–6 клиньев', onClick: () => this.go('productCard') },
+      { name: 'Спецодежда', note: 'Смесовые ткани', onClick: () => this.go('productCard') },
+    ];
+    const productCardFaq = [
+      { q: 'Можно привезти свои изделия?', a: 'Да, принимаем изделие заказчика. Проверим совместимость с выбранной технологией и рассчитаем нанесение.' },
+      { q: 'Какой минимальный заказ?', a: 'От 1 штуки для вышивки и DTF. Для шелкографии — от 30 шт (из-за подготовки трафаретов).' },
+      { q: 'Есть ли размерная сетка?', a: 'Да, стандартные размеры XS–5XL. Для пошива на заказ — по индивидуальным меркам.' },
+    ];
+
+    // ===== TECH PAGE SPLIT DETAILS =====
+    // Add detailsWhat/detailsHow/altTiles to techExamples
+    techExamples.embroidery.detailsWhat = techExamples.embroidery.details.slice(0, 3);
+    techExamples.embroidery.detailsHow = techExamples.embroidery.details.slice(3);
+    techExamples.embroidery.altTiles = [
+      { name: 'Шелкография', why: 'Дешевле на тиражах от 30 шт с простым рисунком.' },
+      { name: 'DTF / DTG', why: 'Для полноцвета и фотоизображений на ткани.' },
+      { name: 'Термотрансфер', why: 'Для надписей, номеров и мелких тиражей.' },
+    ];
+    techExamples.silk.detailsWhat = techExamples.silk.details.slice(0, 3);
+    techExamples.silk.detailsHow = techExamples.silk.details.slice(3);
+    techExamples.silk.altTiles = [
+      { name: 'DTF / DTG', why: 'Для малых тиражей до 30 шт без трафаретов.' },
+      { name: 'Машинная вышивка', why: 'Для премиального объёмного вида.' },
+      { name: 'Термотрансфер', why: 'Для плёночных надписей и номеров.' },
+    ];
+
     const crumb = (label) => [{ label: 'Главная', onClick: () => this.go('home') }, { label }];
 
     return {
@@ -1732,6 +2502,8 @@ class Component extends DCLogic {
       isServices: s.page === 'services', isProducts: s.page === 'products',
       isSewing: s.page === 'sewing', isIndustriesRoot: s.page === 'industriesRoot',
       isProductCard: s.page === 'productCard', isBlog: s.page === 'blog',
+      isProduction: s.page === 'production', isArtwork: s.page === 'artwork',
+      isDelivery: s.page === 'delivery', isContacts: s.page === 'contacts',
       // tech
       techEx, techSwitch, faqItems,
       goCalcTech: () => this.openCalc(),
@@ -1750,7 +2522,23 @@ class Component extends DCLogic {
       // product card
       productCard,
       // blog
-      blogFilters, blogPosts,
+      blogFilters, blogPosts, blogArticle, blogRelated,
+      // production
+      productionStats, productionEquipment, productionQuality, productionCerts,
+      // artwork
+      artworkFormats, artworkByTech, artworkMistakes,
+      // delivery
+      deliveryMethods, paymentTerms,
+      // services page
+      comparisonRows, serviceScenarios, techSubstrate, serviceReviews,
+      // wholesale
+      wholesaleCategories,
+      // sewing catalog
+      sewingCatalog,
+      // products catalog
+      productCatalogCards,
+      // product card extras
+      productCardVariants, productCardFaq,
       // shared
       crumbHome: () => this.go('home'),
       goServices: () => this.go('services'), goProducts: () => this.go('products'),
