@@ -1534,6 +1534,16 @@
     <!-- ============ PRODUCT CARD (individual item) ============ -->
     <sc-if value="{{ isProductCard }}" hint-placeholder-val="{{ false }}">
       <div data-screen-label="Карточка изделия">
+        <div style="background:var(--accent2); color:#fff;">
+          <div style="max-width:1240px; margin:0 auto; padding:11px 24px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+            <span style="font-size:12px; letter-spacing:1.2px; text-transform:uppercase; color:#9FB4CC; font-weight:600;">Изделие</span>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; background:rgba(255,255,255,.1); padding:4px; border-radius:10px;">
+              <sc-for list="{{ productSwitch }}" as="ps" hint-placeholder-count="10">
+                <button onClick="{{ ps.onClick }}" style="height:30px; padding:0 14px; border:0; border-radius:7px; background:{{ ps.bg }}; color:{{ ps.fg }}; font-weight:600; font-size:12.5px; cursor:pointer; font-family:inherit; white-space:nowrap;">{{ ps.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
         <section style="background:var(--surface); border-bottom:1px solid var(--line); padding:32px 0 44px;">
           <div style="max-width:1240px; margin:0 auto; padding:0 24px;">
             <div style="display:flex; gap:8px; font-size:13.5px; color:var(--ink2); margin-bottom:20px;"><span onClick="{{ crumbHome }}" class="dn-link" style="cursor:pointer;">Главная</span><span style="color:var(--ink3);">/</span><span onClick="{{ goProducts }}" class="dn-link" style="cursor:pointer;">Что брендируем</span><span style="color:var(--ink3);">/</span><span>{{ productCard.name }}</span></div>
@@ -1898,10 +1908,12 @@ class Component extends DCLogic {
     faqOpen: 0,
     searchOpen: false,
     blogFilter: 'Все',
+    productExample: 'tshirt',
   };
   toggleFaq(i) { this.setState(s => ({ faqOpen: s.faqOpen === i ? -1 : i })); }
   openSearch() { this.setState({ searchOpen: true, mobileNav: false, mega: null }); }
   closeSearch() { this.setState({ searchOpen: false }); }
+  setProductExample(k) { this.setState({ productExample: k }); }
 
   // ---------- icons ----------
   ic(p, sw) { return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="' + (sw||1.7) + '" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>'; }
@@ -2391,28 +2403,179 @@ class Component extends DCLogic {
     ].map(x => ({ ...x, onClick: () => this.go('industry') }));
     const industryKit = ['Корпоративная форма с логотипом', 'Бейджи и именные таблички', 'Шевроны и нашивки', 'Спецодежда с маркировкой', 'Промо и мерч', 'Представительские изделия'];
 
-    // ===== PRODUCT CARD =====
-    const productCard = {
-      name: 'Футболки',
-      desc: 'Хлопковые и смесовые футболки для нанесения логотипа. Своя основа или подбор из каталога. Вышивка, шелкография, DTF, термотрансфер — подберём метод под тираж и бюджет.',
-      specs: [
-        { label: 'Материал', value: 'Хлопок 150–190 г/м²' },
-        { label: 'Размеры', value: 'XS – 5XL' },
-        { label: 'Цвета', value: '12+ базовых цветов' },
-        { label: 'Мин. тираж', value: 'от 1 шт' },
-      ],
-      techs: [
-        { name: 'Машинная вышивка', note: 'Премиальный логотип на груди / рукаве', icon: I.thread },
-        { name: 'Шелкография', note: 'Тиражная печать от 30 шт', icon: I.silk },
-        { name: 'DTF / DTG', note: 'Полноцвет на малых тиражах', icon: I.dtf },
-      ],
-      subpages: [
-        { label: 'Футболка с вышивкой', onClick: () => this.go('tech') },
-        { label: 'Футболка с логотипом', onClick: () => this.go('tech') },
-        { label: 'Футболка с печатью', onClick: () => this.go('tech') },
-        { label: 'Футболка с надписью', onClick: () => this.go('tech') },
-      ],
+    // ===== PRODUCT CARD (switchable) =====
+    const productExamples = {
+      tshirt: {
+        name: 'Футболки', icon: I.shirt,
+        desc: 'Хлопковые и смесовые футболки для нанесения логотипа. Своя основа или подбор из каталога. Вышивка, шелкография, DTF, термотрансфер — подберём метод под тираж и бюджет.',
+        specs: [
+          { label: 'Материал', value: 'Хлопок 150–190 г/м²' },
+          { label: 'Размеры', value: 'XS – 5XL' },
+          { label: 'Цвета', value: '12+ базовых' },
+          { label: 'Мин. тираж', value: 'от 1 шт' },
+        ],
+        techs: [
+          { name: 'Машинная вышивка', note: 'Логотип на груди / рукаве', icon: I.thread },
+          { name: 'Шелкография', note: 'Тиражная печать от 30 шт', icon: I.silk },
+          { name: 'DTF / DTG', note: 'Полноцвет на малых тиражах', icon: I.dtf },
+        ],
+        subpages: ['Футболка с вышивкой', 'Футболка с логотипом', 'Футболка с печатью', 'Футболка с надписью'],
+      },
+      polo: {
+        name: 'Поло', icon: I.shirt,
+        desc: 'Рубашки поло из пике с воротником — основа корпоративного гардероба. Вышивка логотипа на груди, рукаве или воротнике. Подбор из каталога или пошив по лекалам.',
+        specs: [
+          { label: 'Материал', value: 'Пике 180–220 г/м²' },
+          { label: 'Размеры', value: 'S – 3XL' },
+          { label: 'Цвета', value: '10+ базовых' },
+          { label: 'Мин. тираж', value: 'от 1 шт' },
+        ],
+        techs: [
+          { name: 'Машинная вышивка', note: 'Основной метод для поло', icon: I.thread },
+          { name: 'Шелкография', note: 'Крупные принты на спине', icon: I.silk },
+          { name: 'Термотрансфер', note: 'Надписи и номера', icon: I.thermo },
+        ],
+        subpages: ['Поло с вышивкой', 'Поло с логотипом', 'Корпоративное поло'],
+      },
+      hoodie: {
+        name: 'Толстовки и худи', icon: I.shirt,
+        desc: 'Толстовки и худи из футера с начёсом — для корпоративного мерча, промо-акций и спортивных команд. Вышивка, шелкография, DTF — на груди, спине, рукаве и капюшоне.',
+        specs: [
+          { label: 'Материал', value: 'Футер 280–340 г/м²' },
+          { label: 'Размеры', value: 'XS – 4XL' },
+          { label: 'Тип', value: 'Худи / свитшот / зип' },
+          { label: 'Мин. тираж', value: 'от 1 шт' },
+        ],
+        techs: [
+          { name: 'Машинная вышивка', note: 'Логотип на груди и рукаве', icon: I.thread },
+          { name: 'DTF / DTG', note: 'Крупные полноцветные принты', icon: I.dtf },
+          { name: 'Шелкография', note: 'Тиражи от 30 шт', icon: I.silk },
+        ],
+        subpages: ['Толстовка с вышивкой', 'Худи с логотипом', 'Толстовка с печатью'],
+      },
+      cap: {
+        name: 'Кепки и бейсболки', icon: I.cap,
+        desc: 'Бейсболки и кепки 5–6 клиньев с регулировкой. Вышивка логотипа на фронтальной панели, боковой панели или козырьке. Подбор из каталога или пошив.',
+        specs: [
+          { label: 'Конструкция', value: '5–6 клиньев' },
+          { label: 'Материал', value: 'Хлопок / полиэстер' },
+          { label: 'Регулировка', value: 'Ремешок / липучка' },
+          { label: 'Мин. тираж', value: 'от 1 шт' },
+        ],
+        techs: [
+          { name: 'Машинная вышивка', note: 'Основной метод для кепок', icon: I.thread },
+          { name: 'Термотрансфер', note: 'Мелкие элементы и надписи', icon: I.thermo },
+          { name: 'Сублимация', note: 'Полноцвет на полиэстере', icon: I.sub },
+        ],
+        subpages: ['Кепка с вышивкой', 'Бейсболка с логотипом', 'Кепка с печатью'],
+      },
+      workwear: {
+        name: 'Спецодежда', icon: I.workwear,
+        desc: 'Куртки, комбинезоны, жилеты, халаты из смесовых тканей. Нашивки, вышивка, термотрансфер, светоотражающие элементы. Соответствие нормам СИЗ.',
+        specs: [
+          { label: 'Материал', value: 'Смесовые ткани' },
+          { label: 'Размеры', value: 'XS – 5XL' },
+          { label: 'Норматив', value: 'ГОСТ, СИЗ' },
+          { label: 'Мин. тираж', value: 'от 10 шт' },
+        ],
+        techs: [
+          { name: 'Машинная вышивка', note: 'Логотип и именная нашивка', icon: I.thread },
+          { name: 'Термотрансфер', note: 'Светоотражающие элементы', icon: I.thermo },
+          { name: 'Шелкография', note: 'Крупные тиражи формы', icon: I.silk },
+        ],
+        subpages: ['Спецодежда с логотипом', 'Спецодежда с нашивками', 'Спецодежда с вышивкой'],
+      },
+      chevron: {
+        name: 'Шевроны и нашивки', icon: I.patch,
+        desc: 'Вышитые и сублимационные шевроны, нашивки, аппликации. На заготовке или прямо на изделии. Термоклей, пришивание, оверлок, велкро.',
+        specs: [
+          { label: 'Тип', value: 'Вышивка / сублимация' },
+          { label: 'Форма', value: 'Круг, прямоугольник, контур' },
+          { label: 'Крепление', value: 'Термо / пришивной / велкро' },
+          { label: 'Мин. тираж', value: 'от 10 шт' },
+        ],
+        techs: [
+          { name: 'Машинная вышивка', note: 'Классический вышитый шеврон', icon: I.thread },
+          { name: 'Сублимация', note: 'Полноцвет на синтетической основе', icon: I.sub },
+          { name: 'Лазерная резка', note: 'Точный контурный раскрой', icon: I.cut },
+        ],
+        subpages: ['Шевроны с вышивкой', 'Нашивки на форму', 'Шевроны на липучке'],
+      },
+      shield: {
+        name: 'Шильды', icon: I.plate,
+        desc: 'Маркировочные шильды из алюминия, нержавеющей стали и пластика. Лазерная гравировка, УФ-печать, тиснение. Крепление на клей, винты или заклёпки.',
+        specs: [
+          { label: 'Материал', value: 'Алюминий / нерж. / пластик' },
+          { label: 'Размеры', value: 'от 20×10 мм' },
+          { label: 'Крепление', value: 'Клей / винты / заклёпки' },
+          { label: 'Мин. тираж', value: 'от 1 шт' },
+        ],
+        techs: [
+          { name: 'Лазерная гравировка', note: 'Несмываемая маркировка', icon: I.laser },
+          { name: 'УФ-печать', note: 'Полноцвет на металле', icon: I.uv },
+          { name: 'Тиснение', note: 'Рельефный логотип', icon: I.emboss },
+        ],
+        subpages: ['Шильды на оборудование', 'Шильды с логотипом', 'Шильды из нержавейки'],
+      },
+      sign: {
+        name: 'Таблички', icon: I.plate,
+        desc: 'Информационные, навигационные и кабинетные таблички из ПВХ, акрила, металла и композита. УФ-печать, гравировка, наклейка или дистанционные держатели.',
+        specs: [
+          { label: 'Материал', value: 'ПВХ / акрил / металл' },
+          { label: 'Размеры', value: 'от 50×30 мм' },
+          { label: 'Крепление', value: 'Клей / держатели / саморезы' },
+          { label: 'Мин. тираж', value: 'от 1 шт' },
+        ],
+        techs: [
+          { name: 'УФ-печать', note: 'Полноцвет на любой основе', icon: I.uv },
+          { name: 'Лазерная гравировка', note: 'Навигация и маркировка', icon: I.laser },
+          { name: 'Лазерная резка', note: 'Фигурный раскрой', icon: I.cut },
+        ],
+        subpages: ['Таблички навигации', 'Кабинетные таблички', 'Таблички с логотипом'],
+      },
+      badge: {
+        name: 'Бейджи', icon: I.badge,
+        desc: 'Именные и информационные бейджи из пластика и металла. Гравировка, УФ-печать, окно для вкладыша. Крепление на булавку, магнит или клипсу.',
+        specs: [
+          { label: 'Материал', value: 'Пластик / металл' },
+          { label: 'Размеры', value: 'от 70×30 мм' },
+          { label: 'Крепление', value: 'Булавка / магнит / клипса' },
+          { label: 'Мин. тираж', value: 'от 1 шт' },
+        ],
+        techs: [
+          { name: 'Лазерная гравировка', note: 'Именной бейдж', icon: I.laser },
+          { name: 'УФ-печать', note: 'Полноцвет с логотипом', icon: I.uv },
+          { name: 'Сменный вкладыш', note: 'Для ротации сотрудников', icon: I.badge },
+        ],
+        subpages: ['Бейджи с логотипом', 'Именные бейджи', 'Бейджи на магните'],
+      },
+      tag: {
+        name: 'Номерки', icon: I.badge,
+        desc: 'Гардеробные номерки из дерева, акрила и металла. Лазерная гравировка номера и логотипа. Круглые, прямоугольные, фигурные.',
+        specs: [
+          { label: 'Материал', value: 'Дерево / акрил / металл' },
+          { label: 'Форма', value: 'Круг / прямоугольник / фигурн.' },
+          { label: 'Нумерация', value: 'Последовательная' },
+          { label: 'Мин. тираж', value: 'от 10 шт' },
+        ],
+        techs: [
+          { name: 'Лазерная гравировка', note: 'Номер + логотип', icon: I.laser },
+          { name: 'Лазерная резка', note: 'Фигурная форма', icon: I.cut },
+          { name: 'УФ-печать', note: 'Полноцвет на акриле', icon: I.uv },
+        ],
+        subpages: ['Гардеробные номерки', 'Номерки с логотипом', 'Номерки из дерева'],
+      },
     };
+    const productCard = productExamples[s.productExample] || productExamples.tshirt;
+    productCard.subpages = (productCard.subpages || []).map(label => ({ label, onClick: () => this.go('tech') }));
+    const productSwitch = [
+      ['tshirt', 'Футболки'], ['polo', 'Поло'], ['hoodie', 'Толстовки'], ['cap', 'Кепки'],
+      ['workwear', 'Спецодежда'], ['chevron', 'Шевроны'], ['shield', 'Шильды'],
+      ['sign', 'Таблички'], ['badge', 'Бейджи'], ['tag', 'Номерки'],
+    ].map(([k, label]) => ({
+      label, onClick: () => this.setProductExample(k),
+      bg: s.productExample === k ? A : 'transparent', fg: s.productExample === k ? '#fff' : 'var(--ink2)', bd: s.productExample === k ? A : LINE,
+    }));
 
     // ===== BLOG =====
     const blogCats = ['Все', 'Технологии', 'Материалы', 'Макеты', 'Кейсы'];
@@ -2662,7 +2825,7 @@ class Component extends DCLogic {
       // industries root
       industriesFull, industryKit,
       // product card
-      productCard,
+      productCard, productSwitch,
       // blog
       blogFilters, blogPosts, blogArticle, blogRelated,
       // production
